@@ -1,0 +1,2391 @@
+<html>
+		
+	<title>Trouve Ta première</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/css_design.css' %}"/>
+	<link rel="website icon" type="png" href="{% static 'image/TTP.png' %}">
+	
+		
+	<head>
+		<meta name="viewport" content="user-scalable=no,width=device-width" />
+		
+		
+
+	</head>
+	<body>
+		<div class="outer-div">
+			<div id="bloc_general" class = "bloc_gen">
+			
+				<div id="gauche">
+					<div id="photo" class = "div_image">
+						<br>
+						<img class="title_img" src="{% static 'image/TTP.png' %}" alt="logo">
+						<span class="title">Trouve Ta Première</span>
+						  
+					</div>
+					<br><br>
+					<p style="font-family:Cambria;font-size: 115%; margin-left: 1%;margin-right: 1%;" ><i>Entre dans les champs ci-dessous des informations sur les études que tu voudrais suivre plus tard, et nous te conseillerons quel type de première est conseillé pour que tu y accèdes.</i></p>
+					<br>
+					<div style = "height:30px;" > </div>
+					<p style="font-family:Verdana; margin-left: 9%;margin-right: 1%;" class = "texte_phone"><b>1 : Le lieu que tu souhaites:</b></p>
+					<br>
+					
+					
+					<label>
+					<div><input list=lieux_choice type='search' id='choix_lieu'  size=38% placeholder=' Saisis un lieu' onChange = 'changement_place()' style="margin-left: 15%;margin-right: 1%;text-align: left;" class = "blink">
+					<img src="{% static 'image/l.jpg' %}" alt="logo" class = "img_loupe"></div>
+					</label>
+					
+					<div class='div_saut_ligne' style = "height:30px;" > </div>	
+					<div id="premiere_liste" class = "liste_deroulante" >
+						<p style="font-family:Verdana; margin-left: 8%;margin-right: 1%;"><b>2 : La filière postbac que tu veux :</b></p>
+						<br>
+						<div id="first_to_change">
+						<select id="choix_dep" style = "align-items: center;" class="liste" onChange="changement_principal()">
+							<option value="Selection">Sélectionnez une filière</option>						
+							<option value="BTS">BTS</option>
+							<option value="BUT">BUT</option>
+							<option value="CPGE">CPGE</option>
+							<option value="Ecole de Commerce">Ecole de Commerce</option>
+							<option value="Ecole d'Ingénieur">Ecole d'Ingénieur</option>							
+							<option value="EFTS">EFTS</option>
+							<option value="IFSI">IFSI</option>
+							<option value="Licence">Licence</option>							
+							<option value="Licence_Las">Licence_Las</option>							
+							<option value="PASS">PASS</option>							
+							<option value="Autre formation">Autre formation</option>
+						</select>
+						</div>
+					</div>
+					<div style = "height:10px;" > </div>	
+					
+
+					<div style = "height:10px;" > </div>	
+					<div class='div_saut_ligne' style = "height:30px;" > </div>	
+					<div id="intro_calque" class = "liste_deroulante" >
+						<p style="font-family:Verdana;  margin-left: 10%;margin-right: 1%;"><b>3 : La filière postbac détaillée :</b></p>
+						<br>
+						<div id="second_to_change">
+						<select id='choix_ville' class='liste' onChange='deuxieme_changement()'>
+							<option value='Selection'>Sélectionner une filière détaillée</option>
+							<option value="Année préparatoire">Année préparatoire</option>
+							<option value="BPJEPS">BPJEPS</option>
+							<option value="BTS - Agricole">BTS - Agricole</option>
+							<option value="BTS - Maritime">BTS - Maritime</option>
+							<option value="BTS - Production">BTS - Production</option>
+							<option value="BTS - Services">BTS - Services</option>
+							<option value="BUT - Production">BUT - Production</option>
+							<option value="BUT - Service">BUT - Service</option>
+							<option value="C.M.I - Cursus Master en Ingénierie">C.M.I - Cursus Master en Ingénierie</option>
+							<option value="CPES">CPES</option>
+							<option value="CUPGE - Arts Lettres Langues">CUPGE - Arts Lettres Langues</option>
+							<option value="CUPGE - Droit-économie-gestion">CUPGE - Droit-économie-gestion</option>
+							<option value="CUPGE - Sciences, technologie, santé">CUPGE - Sciences, technologie, santé</option>
+							<option value="Cadre Technique">Cadre Technique</option>
+							<option value="Classe préparatoire aux études supérieures">Classe préparatoire aux études supérieures</option>
+							<option value="Classe préparatoire littéraire">Classe préparatoire littéraire</option>
+							<option value="Classe préparatoire scientifique">Classe préparatoire scientifique</option>
+							<option value="Classe préparatoire économique et commerciale">Classe préparatoire économique et commerciale</option>
+							<option value="D.E secteur sanitaire">D.E secteur sanitaire</option>
+							<option value="D.E secteur social">D.E secteur social</option>
+							<option value="DCG">DCG</option>
+							<option value="DEJEPS">DEJEPS</option>
+							<option value="DEUST">DEUST</option>
+							<option value="DN MADE">DN MADE</option>
+							<option value="Diplôme National d'Art">Diplôme National d'Art</option>
+							<option value="Diplôme d'Etablissement">Diplôme d'Etablissement</option>
+							<option value="Diplôme d'Université">Diplôme d'Université</option>
+							<option value="Diplôme d'établissement">Diplôme d'établissement</option>
+							<option value="Formation des écoles de commerce et de management">Formation des écoles de commerce et de management</option>
+							<option value="Formation des écoles supérieure d'art">Formation des écoles supérieure d'art</option>
+							<option value="Formation des écoles supérieures de cuisine">Formation des écoles supérieures de cuisine</option>
+							<option value="Formation professionnelle">Formation professionnelle</option>
+							<option value="Formation valant grade de licence">Formation valant grade de licence</option>
+							<option value="Formations  des écoles d'ingénieurs">Formations  des écoles d'ingénieurs</option>
+							<option value="Formations Bac + 3">Formations Bac + 3</option>
+							<option value="Formations Bac + 5">Formations Bac + 5</option>
+							<option value="Formations des écoles nationales vétérinaires">Formations des écoles nationales vétérinaires</option>
+							<option value="LP - Droit-économie-gestion">LP - Droit-économie-gestion</option>
+							<option value="Licence - Arts-lettres-langues">Licence - Arts-lettres-langues</option>
+							<option value="Licence - Arts-lettres-langues / Sciences humaines et sociales">Licence - Arts-lettres-langues / Sciences humaines et sociales</option>
+							<option value="Licence - Droit-économie-gestion">Licence - Droit-économie-gestion</option>
+							<option value="Licence - Droit-économie-gestion / Arts-lettres-langues">Licence - Droit-économie-gestion / Arts-lettres-langues</option>
+							<option value="Licence - Droit-économie-gestion / Sciences - technologies - santé">Licence - Droit-économie-gestion / Sciences - technologies - santé</option>
+							<option value="Licence - Droit-économie-gestion / Sciences humaines et sociales">Licence - Droit-économie-gestion / Sciences humaines et sociales</option>
+							<option value="Licence - STAPS">Licence - STAPS</option>
+							<option value="Licence - Sciences - technologies - santé">Licence - Sciences - technologies - santé</option>
+							<option value="Licence - Sciences humaines et sociales">Licence - Sciences humaines et sociales</option>
+							<option value="Licence - Sciences humaines et sociales / Sciences - technologies - santé">Licence - Sciences humaines et sociales / Sciences - technologies - santé</option>
+							<option value="Mention complémentaire">Mention complémentaire</option>
+							<option value="Mise à niveau">Mise à niveau</option>
+							<option value="Sciences politiques">Sciences politiques</option>
+							
+						</select>
+						</div>
+					</div>
+					<div id="calque_ville" class="liste_div" >						
+						
+					</div>
+					
+					<div style = "height:10px;" > </div>
+					<div id="info_calque"  style ="margin-left: 10%;">&nbsp</div>
+
+					
+					
+					<div class='div_saut_ligne' style = "height:30px;" > </div>	
+					<div id="intro_troisieme_liste" class = "liste_deroulante" >
+						<p style="font-family:Verdana; margin-left: 10%;margin-right: 1%;"><b>4 : La filière postbac plus détaillée :</b></p>
+						<br>
+					</div>
+					<div id="troisieme_liste">	
+						<div id="third_to_change">			
+						<select id='choix_fil' class='liste' onChange='troisieme_changement()'>
+							<option value='Selection'>Sélectionner la dernière catégorie</option>
+							<option value="Accueil d'excellence en tourisme">Accueil d'excellence en tourisme</option>
+							<option value="Accueil dans transports">Accueil dans transports</option>
+							<option value="Accueil réception">Accueil réception</option>
+							<option value="Acoustique et Vibrations">Acoustique et Vibrations</option>
+							<option value="Activités aquatiques et de la natation">Activités aquatiques et de la natation</option>
+							<option value="Activités de la forme">Activités de la forme</option>
+							<option value="Activités physiques et sportives adaptées : déficiences intellectuelles, troubles psychiques">Activités physiques et sportives adaptées : déficiences intellectuelles, troubles psychiques</option>
+							<option value="Activités physiques et sportives et inadaptations sociales">Activités physiques et sportives et inadaptations sociales</option>
+							<option value="Activités physiques pour tous">Activités physiques pour tous</option>
+							<option value="Activités physiques pour tous / Activités sports collectifs">Activités physiques pour tous / Activités sports collectifs</option>
+							<option value="Activités sports collectifs">Activités sports collectifs</option>
+							<option value="Administration et Echanges internationaux">Administration et Echanges internationaux</option>
+							<option value="Administration publique">Administration publique</option>
+							<option value="Administration économique et sociale">Administration économique et sociale</option>
+							<option value="Agent de contrôle non destructif">Agent de contrôle non destructif</option>
+							<option value="Agronomie : Productions végétales">Agronomie : Productions végétales</option>
+							<option value="Aménagements paysagers">Aménagements paysagers</option>
+							<option value="Analyse des milieux biologiques">Analyse des milieux biologiques</option>
+							<option value="Analyse, conduite et stratégie de l'entreprise agricole">Analyse, conduite et stratégie de l'entreprise agricole</option>
+							<option value="Analyses agricoles biologiques et biotechnologiques">Analyses agricoles biologiques et biotechnologiques</option>
+							<option value="Analyses de biologie médicale">Analyses de biologie médicale</option>
+							<option value="Anglais / Langue asiatique">Anglais / Langue asiatique</option>
+							<option value="Animation">Animation</option>
+							<option value="Animation et gestion des activités physiques, sportives ou culturelles">Animation et gestion des activités physiques, sportives ou culturelles</option>
+							<option value="Animation et gestion des activités sportives, physiques ou culturelles, parcours activités aquatiques">Animation et gestion des activités sportives, physiques ou culturelles, parcours activités aquatiques</option>
+							<option value="Animation et gestion des activités sportives, physiques ou culturelles, parcours activités de pleine nature">Animation et gestion des activités sportives, physiques ou culturelles, parcours activités de pleine nature</option>
+							<option value="Animation et gestion des activités sportives, physiques ou culturelles, parcours agent de développement de club sportif">Animation et gestion des activités sportives, physiques ou culturelles, parcours agent de développement de club sportif</option>
+							<option value="Animation et gestion des activités sportives, physiques ou culturelles, parcours animation">Animation et gestion des activités sportives, physiques ou culturelles, parcours animation</option>
+							<option value="Animation, commercialisation des services sportifs">Animation, commercialisation des services sportifs</option>
+							<option value="Animation-gestion de projets dans le secteur sportif">Animation-gestion de projets dans le secteur sportif</option>
+							<option value="Année préparatoire">Année préparatoire</option>
+							<option value="Année préparatoire à l'École Nationale de la Marine Marchande - Officier 1ère classe">Année préparatoire à l'École Nationale de la Marine Marchande - Officier 1ère classe</option>
+							<option value="Aquaculture">Aquaculture</option>
+							<option value="Architecture">Architecture</option>
+							<option value="Architectures en Métal : conception et Réalisation">Architectures en Métal : conception et Réalisation</option>
+							<option value="Archéologie, histoire de l'art, anthropologie">Archéologie, histoire de l'art, anthropologie</option>
+							<option value="Arts">Arts</option>
+							<option value="Arts du spectacle">Arts du spectacle</option>
+							<option value="Arts plastiques">Arts plastiques</option>
+							<option value="Assistance Conseil Vente à distance">Assistance Conseil Vente à distance</option>
+							<option value="Assistance technique d'ingénieur">Assistance technique d'ingénieur</option>
+							<option value="Assistant ingénieur en biologie, biochimie, biotechnologie">Assistant ingénieur en biologie, biochimie, biotechnologie</option>
+							<option value="Assistant ingénieur en biologie-biochimie - biotechnologies (bac +3)">Assistant ingénieur en biologie-biochimie - biotechnologies (bac +3)</option>
+							<option value="Assistant juridique">Assistant juridique</option>
+							<option value="Assurance">Assurance</option>
+							<option value="Aéronautique">Aéronautique</option>
+							<option value="Aéronautique - option avionique">Aéronautique - option avionique</option>
+							<option value="Aéronautique option avions à moteur à pistons">Aéronautique option avions à moteur à pistons</option>
+							<option value="Aéronautique option avions à moteur à turbines">Aéronautique option avions à moteur à turbines</option>
+							<option value="Aéronautique option hélicoptère moteur à turbines">Aéronautique option hélicoptère moteur à turbines</option>
+							<option value="B/L - Lettres et sciences sociales">B/L - Lettres et sciences sociales</option>
+							<option value="BCPST">BCPST</option>
+							<option value="Banque conseiller de clientèle">Banque conseiller de clientèle</option>
+							<option value="Bicursus Architecture Ingénieur">Bicursus Architecture Ingénieur</option>
+							<option value="Bioanalyses et contrôles">Bioanalyses et contrôles</option>
+							<option value="Bioqualité">Bioqualité</option>
+							<option value="Biotechnologies">Biotechnologies</option>
+							<option value="Bureautique et Communication Multimédia">Bureautique et Communication Multimédia</option>
+							<option value="Bâtiment">Bâtiment</option>
+							<option value="Bâtiment et Construction">Bâtiment et Construction</option>
+							<option value="Bâtiment et travaux publics">Bâtiment et travaux publics</option>
+							<option value="CPES - Arts">CPES - Arts</option>
+							<option value="CPES - Générale">CPES - Générale</option>
+							<option value="CPES - Littéraire">CPES - Littéraire</option>
+							<option value="CPES - Sciences économiques">CPES - Sciences économiques</option>
+							<option value="CPES - Scientifique">CPES - Scientifique</option>
+							<option value="Cadre technique génie de l'environnement marin">Cadre technique génie de l'environnement marin</option>
+							<option value="Cadre technique production et valorisation des ressources marines">Cadre technique production et valorisation des ressources marines</option>
+							<option value="Canoë-Kayak">Canoë-Kayak</option>
+							<option value="Carrières juridiques">Carrières juridiques</option>
+							<option value="Carrières sociales Parcours animation sociale et socioculturelle">Carrières sociales Parcours animation sociale et socioculturelle</option>
+							<option value="Carrières sociales Parcours assistance sociale">Carrières sociales Parcours assistance sociale</option>
+							<option value="Carrières sociales Parcours éducation spécialisée">Carrières sociales Parcours éducation spécialisée</option>
+							<option value="Carrières sociales parcours coordination et gestion des établissements et services sanitaires et sociaux">Carrières sociales parcours coordination et gestion des établissements et services sanitaires et sociaux</option>
+							<option value="Carrières sociales parcours villes et territoires durables">Carrières sociales parcours villes et territoires durables</option>
+							<option value="Certificat de capacité d'Orthophoniste">Certificat de capacité d'Orthophoniste</option>
+							<option value="Certificat de capacité d'Orthoptiste">Certificat de capacité d'Orthoptiste</option>
+							<option value="Chargé de mission qualité, sécurité, santé au travail et environnement (Bac + 3)">Chargé de mission qualité, sécurité, santé au travail et environnement (Bac + 3)</option>
+							<option value="Chargé de projet en aménagement durable du territoire (bac +2)">Chargé de projet en aménagement durable du territoire (bac +2)</option>
+							<option value="Chimie">Chimie</option>
+							<option value="Chimie, Sciences de la vie">Chimie, Sciences de la vie</option>
+							<option value="Cinéma">Cinéma</option>
+							<option value="Cinéma et Audiovisuel">Cinéma et Audiovisuel</option>
+							<option value="Classe Préparatoire Universitaire - Physique - Chimie">Classe Préparatoire Universitaire - Physique - Chimie</option>
+							<option value="Classe Préparatoire Universitaire Mathématiques - Physique - Informatique">Classe Préparatoire Universitaire Mathématiques - Physique - Informatique</option>
+							<option value="Classe de mise à niveau au BTS Maritime Pêche et Gestion de l'Environnement Marin">Classe de mise à niveau au BTS Maritime Pêche et Gestion de l'Environnement Marin</option>
+							<option value="Commerce International">Commerce International</option>
+							<option value="Communication">Communication</option>
+							<option value="Comptabilité et gestion">Comptabilité et gestion</option>
+							<option value="Conception de processus de découpe et d'emboutissage">Conception de processus de découpe et d'emboutissage</option>
+							<option value="Conception de produits industriels">Conception de produits industriels</option>
+							<option value="Conception des processus de réalisation de produits (1ère année commune)">Conception des processus de réalisation de produits (1ère année commune)</option>
+							<option value="Conception et Réalisation de Systèmes Automatiques">Conception et Réalisation de Systèmes Automatiques</option>
+							<option value="Conception et industrialisation en construction navale">Conception et industrialisation en construction navale</option>
+							<option value="Conception et industrialisation en microtechniques">Conception et industrialisation en microtechniques</option>
+							<option value="Conception et réalisation de carrosseries">Conception et réalisation de carrosseries</option>
+							<option value="Conception et réalisation en chaudronnerie industrielle">Conception et réalisation en chaudronnerie industrielle</option>
+							<option value="Conseil et commercialisation de solutions techniques">Conseil et commercialisation de solutions techniques</option>
+							<option value="Conservation-restauration des biens culturels">Conservation-restauration des biens culturels</option>
+							<option value="Contrôle industriel et régulation automatique">Contrôle industriel et régulation automatique</option>
+							<option value="Cursus préparatoire aux concours des grandes écoles d'ingénieurs">Cursus préparatoire aux concours des grandes écoles d'ingénieurs</option>
+							<option value="Cycle Préparatoire Lettres  - Licence renforcée">Cycle Préparatoire Lettres  - Licence renforcée</option>
+							<option value="Cycle Universitaire Préparatoire aux Grandes Ecoles">Cycle Universitaire Préparatoire aux Grandes Ecoles</option>
+							<option value="Cycle Universitaire Préparatoire aux Grandes Ecoles - Mathématiques et Physique">Cycle Universitaire Préparatoire aux Grandes Ecoles - Mathématiques et Physique</option>
+							<option value="Cycle Universitaire Préparatoire aux Grandes Ecoles - Physique et Mathématiques">Cycle Universitaire Préparatoire aux Grandes Ecoles - Physique et Mathématiques</option>
+							<option value="Cycle Universitaire Préparatoire aux Grandes Écoles de commerce">Cycle Universitaire Préparatoire aux Grandes Écoles de commerce</option>
+							<option value="Cycle Universitaire de Préparation aux Grandes Ecoles Scientifiques">Cycle Universitaire de Préparation aux Grandes Ecoles Scientifiques</option>
+							<option value="Cycle pluridisciplinaire d'Études Supérieures - Humanités">Cycle pluridisciplinaire d'Études Supérieures - Humanités</option>
+							<option value="Cycle pluridisciplinaire d'Études Supérieures - SESJ">Cycle pluridisciplinaire d'Études Supérieures - SESJ</option>
+							<option value="Cycle pluridisciplinaire d'Études Supérieures - Sciences">Cycle pluridisciplinaire d'Études Supérieures - Sciences</option>
+							<option value="Cycle pluridisciplinaire d'Études Supérieures - Sciences et sociétés">Cycle pluridisciplinaire d'Études Supérieures - Sciences et sociétés</option>
+							<option value="Cycle préparatoire Physique Chimie, parcours renforcé">Cycle préparatoire Physique Chimie, parcours renforcé</option>
+							<option value="Cycle universitaire préparatoire aux grandes écoles">Cycle universitaire préparatoire aux grandes écoles</option>
+							<option value="Cycle universitaire préparatoire aux grandes écoles - Mécanique">Cycle universitaire préparatoire aux grandes écoles - Mécanique</option>
+							<option value="Cycle universitaire préparatoire aux grandes écoles - Parcours Informatique, Mathématiques">Cycle universitaire préparatoire aux grandes écoles - Parcours Informatique, Mathématiques</option>
+							<option value="Cycle universitaire préparatoire aux grandes écoles - Parcours Sciences pour l'ingénieur">Cycle universitaire préparatoire aux grandes écoles - Parcours Sciences pour l'ingénieur</option>
+							<option value="Cycle universitaire préparatoire aux grandes écoles - Physique">Cycle universitaire préparatoire aux grandes écoles - Physique</option>
+							<option value="D.E Assistant de Service Social">D.E Assistant de Service Social</option>
+							<option value="D.E Audioprothésiste">D.E Audioprothésiste</option>
+							<option value="D.E Educateur Spécialisé">D.E Educateur Spécialisé</option>
+							<option value="D.E Educateur Technique Spécialisé">D.E Educateur Technique Spécialisé</option>
+							<option value="D.E Educateur de Jeunes Enfants">D.E Educateur de Jeunes Enfants</option>
+							<option value="D.E Ergothérapeute">D.E Ergothérapeute</option>
+							<option value="D.E Infirmier">D.E Infirmier</option>
+							<option value="D.E Psychomotricien">D.E Psychomotricien</option>
+							<option value="D.E Pédicure-Podologue">D.E Pédicure-Podologue</option>
+							<option value="D.E Technicien de Laboratoire Médical">D.E Technicien de Laboratoire Médical</option>
+							<option value="D.E manipulateur/trice en électroradiologie médicale">D.E manipulateur/trice en électroradiologie médicale</option>
+							<option value="DTS Imagerie médicale et radiologie thérapeutique">DTS Imagerie médicale et radiologie thérapeutique</option>
+							<option value="Diplôme National d'Art">Diplôme National d'Art</option>
+							<option value="Diplôme National d'Art option art">Diplôme National d'Art option art</option>
+							<option value="Diplôme National d'Art option art, mention conservation-restauration des biens culturels">Diplôme National d'Art option art, mention conservation-restauration des biens culturels</option>
+							<option value="Diplôme National d'Art option design">Diplôme National d'Art option design</option>
+							<option value="Diplôme National d'Art option design, mention design graphique et interactivité">Diplôme National d'Art option design, mention design graphique et interactivité</option>
+							<option value="Diplôme d'Etablissement">Diplôme d'Etablissement</option>
+							<option value="Diplôme d'Université">Diplôme d'Université</option>
+							<option value="Diplôme d'Université - PAREO">Diplôme d'Université - PAREO</option>
+							<option value="Diplôme d'Université CAES">Diplôme d'Université CAES</option>
+							<option value="Diplôme de Comptabilité et de Gestion">Diplôme de Comptabilité et de Gestion</option>
+							<option value="Dispositif SAS - Préparation à l'apprentissage">Dispositif SAS - Préparation à l'apprentissage</option>
+							<option value="Diététique">Diététique</option>
+							<option value="Droit">Droit</option>
+							<option value="Droit et Culture Juridique - Classe Préparatoire (Prépa D1)">Droit et Culture Juridique - Classe Préparatoire (Prépa D1)</option>
+							<option value="Droit français - Droit étranger">Droit français - Droit étranger</option>
+							<option value="Droit, Economie">Droit, Economie</option>
+							<option value="Droit, Informatique">Droit, Informatique</option>
+							<option value="Droit, Sciences et Innovation">Droit, Sciences et Innovation</option>
+							<option value="Développement de l'agriculture des régions chaudes">Développement de l'agriculture des régions chaudes</option>
+							<option value="Développement et Réalisation Bois">Développement et Réalisation Bois</option>
+							<option value="Développement, animation des territoires ruraux">Développement, animation des territoires ruraux</option>
+							<option value="ECG - Mathématiques appliquées + ESH">ECG - Mathématiques appliquées + ESH</option>
+							<option value="ECG - Mathématiques appliquées + HGG">ECG - Mathématiques appliquées + HGG</option>
+							<option value="ECG - Mathématiques approfondies + ESH">ECG - Mathématiques approfondies + ESH</option>
+							<option value="ECG - Mathématiques approfondies + HGG">ECG - Mathématiques approfondies + HGG</option>
+							<option value="ECT - Option technologique">ECT - Option technologique</option>
+							<option value="ENS Cachan D2">ENS Cachan D2</option>
+							<option value="ENS Rennes D1">ENS Rennes D1</option>
+							<option value="Ecole nationale des Chartes">Ecole nationale des Chartes</option>
+							<option value="Ecole normale supérieure Paris Saclay ? arts et design">Ecole normale supérieure Paris Saclay ? arts et design</option>
+							<option value="Economie">Economie</option>
+							<option value="Economie et gestion">Economie et gestion</option>
+							<option value="Economie sociale familiale">Economie sociale familiale</option>
+							<option value="Economie, Mathématiques">Economie, Mathématiques</option>
+							<option value="Edition">Edition</option>
+							<option value="Electronique, énergie électrique, automatique">Electronique, énergie électrique, automatique</option>
+							<option value="Electrotechnique">Electrotechnique</option>
+							<option value="Enveloppe des bâtiments : conception et réalisation">Enveloppe des bâtiments : conception et réalisation</option>
+							<option value="Environnement nucléaire">Environnement nucléaire</option>
+							<option value="Espace">Espace</option>
+							<option value="Etude et réalisation d'agencement">Etude et réalisation d'agencement</option>
+							<option value="Etudes culturelles">Etudes culturelles</option>
+							<option value="Etudes de réalisation d'un projet de communication - 1ère année commune">Etudes de réalisation d'un projet de communication - 1ère année commune</option>
+							<option value="Etudes européennes et internationales">Etudes européennes et internationales</option>
+							<option value="Etudes théâtrales">Etudes théâtrales</option>
+							<option value="Europlastics et composites à référentiel commun européen - option Conception d'Outillage">Europlastics et composites à référentiel commun européen - option Conception d'Outillage</option>
+							<option value="Europlastics et composites à référentiel commun européen - option Pilotage et Optimisation de la production">Europlastics et composites à référentiel commun européen - option Pilotage et Optimisation de la production</option>
+							<option value="Événement">Événement</option>
+							<option value="FCIL -  Métiers du plâtre">FCIL -  Métiers du plâtre</option>
+							<option value="FCIL - CAES - Option Production">FCIL - CAES - Option Production</option>
+							<option value="FCIL - CAES - Option Services">FCIL - CAES - Option Services</option>
+							<option value="FCIL - Entreprenariat Hôtellerie">FCIL - Entreprenariat Hôtellerie</option>
+							<option value="FCIL - Environnement Numérique au Service de l'Autonomie de la Personne">FCIL - Environnement Numérique au Service de l'Autonomie de la Personne</option>
+							<option value="FCIL - Marchandiseur Visuel Cross Canal">FCIL - Marchandiseur Visuel Cross Canal</option>
+							<option value="FCIL - Mobilités Urbaines, maintenances des véhicules électriques légers (Vélos électriques, trottinettes, hoverboards, ...)">FCIL - Mobilités Urbaines, maintenances des véhicules électriques légers (Vélos électriques, trottinettes, hoverboards, ...)</option>
+							<option value="FCIL - Parcours polyvalent en recyclage et réhabilitation des véhicules">FCIL - Parcours polyvalent en recyclage et réhabilitation des véhicules</option>
+							<option value="FCIL - SVDI (Sureté vidéo détection incendie)">FCIL - SVDI (Sureté vidéo détection incendie)</option>
+							<option value="FCIL - Tourneur fraiseur sur machines conventionnelles dans l'aéronautique et l'aérospatiale">FCIL - Tourneur fraiseur sur machines conventionnelles dans l'aéronautique et l'aérospatiale</option>
+							<option value="FCIL Adjoint des cadres sanitaires et sociaux - Secrétariat médico-social">FCIL Adjoint des cadres sanitaires et sociaux - Secrétariat médico-social</option>
+							<option value="FCIL Administrateur réseau, infrastructure et système numérique">FCIL Administrateur réseau, infrastructure et système numérique</option>
+							<option value="FCIL Agent de maitrise de "métré bois"">FCIL Agent de maitrise de "métré bois"</option>
+							<option value="FCIL Art et Couture">FCIL Art et Couture</option>
+							<option value="FCIL Assistant gestion site web et communication numérique multimédia, à destination des clients et des usagers">FCIL Assistant gestion site web et communication numérique multimédia, à destination des clients et des usagers</option>
+							<option value="FCIL Assistant(e) gouvernant">FCIL Assistant(e) gouvernant</option>
+							<option value="FCIL BARISTA">FCIL BARISTA</option>
+							<option value="FCIL CAO - DAO du bâtiment">FCIL CAO - DAO du bâtiment</option>
+							<option value="FCIL Chef de rang">FCIL Chef de rang</option>
+							<option value="FCIL Chef de rang à la française - Relais & Chateaux">FCIL Chef de rang à la française - Relais & Chateaux</option>
+							<option value="FCIL Commerce international des vins, spiritueux et oenotourisme">FCIL Commerce international des vins, spiritueux et oenotourisme</option>
+							<option value="FCIL Communication web et webmarketing">FCIL Communication web et webmarketing</option>
+							<option value="FCIL Conseiller commercial en automobile">FCIL Conseiller commercial en automobile</option>
+							<option value="FCIL Contrôle Technique">FCIL Contrôle Technique</option>
+							<option value="FCIL Crémier-fromager : territoire, art culinaire et vins de champagne">FCIL Crémier-fromager : territoire, art culinaire et vins de champagne</option>
+							<option value="FCIL DAide déclarant en douane">FCIL DAide déclarant en douane</option>
+							<option value="FCIL Domotique appliquée à la santé / gestion technique de bâtiment">FCIL Domotique appliquée à la santé / gestion technique de bâtiment</option>
+							<option value="FCIL E-Commerce">FCIL E-Commerce</option>
+							<option value="FCIL Ecole européenne du goût et art de la table">FCIL Ecole européenne du goût et art de la table</option>
+							<option value="FCIL Electricien du spectacle">FCIL Electricien du spectacle</option>
+							<option value="FCIL Electromobilité">FCIL Electromobilité</option>
+							<option value="FCIL Esquisse">FCIL Esquisse</option>
+							<option value="FCIL Fibre optique">FCIL Fibre optique</option>
+							<option value="FCIL Formation aux compétences numériques de la vente dans l'entreprise">FCIL Formation aux compétences numériques de la vente dans l'entreprise</option>
+							<option value="FCIL Formation graphisme et communication visuelle">FCIL Formation graphisme et communication visuelle</option>
+							<option value="FCIL Gestion dossier retraite prévoyance et santé">FCIL Gestion dossier retraite prévoyance et santé</option>
+							<option value="FCIL Hydro - esthétique">FCIL Hydro - esthétique</option>
+							<option value="FCIL Maintenance Milieu Nucléaire">FCIL Maintenance Milieu Nucléaire</option>
+							<option value="FCIL Maintenance de 1er niveau des véhicules routiers">FCIL Maintenance de 1er niveau des véhicules routiers</option>
+							<option value="FCIL Maroquinerie / Gainerie / Sellerie de luxe">FCIL Maroquinerie / Gainerie / Sellerie de luxe</option>
+							<option value="FCIL Moteurs hors bord haute technicité">FCIL Moteurs hors bord haute technicité</option>
+							<option value="FCIL Multimédia">FCIL Multimédia</option>
+							<option value="FCIL Mécanicien circuit auto">FCIL Mécanicien circuit auto</option>
+							<option value="FCIL Mécanicien en compétition automobile - Option monoplace">FCIL Mécanicien en compétition automobile - Option monoplace</option>
+							<option value="FCIL Mécanique de compétition - préparation moteurs">FCIL Mécanique de compétition - préparation moteurs</option>
+							<option value="FCIL Métiers de Laboratoire">FCIL Métiers de Laboratoire</option>
+							<option value="FCIL Nivoculteur">FCIL Nivoculteur</option>
+							<option value="FCIL Ouvrier voilier polyvalent">FCIL Ouvrier voilier polyvalent</option>
+							<option value="FCIL Projeteur/euse Building Information Modeling (BIM)">FCIL Projeteur/euse Building Information Modeling (BIM)</option>
+							<option value="FCIL Prototypiste Mécanicien(ne) Modèle">FCIL Prototypiste Mécanicien(ne) Modèle</option>
+							<option value="FCIL Préparation aux concours de la fonction publique concernant les métiers de la sécurité">FCIL Préparation aux concours de la fonction publique concernant les métiers de la sécurité</option>
+							<option value="FCIL Responsable d'exécution de travaux de réhabilitation : reprise et rénovation d'ouvrage de Gros ?uvre">FCIL Responsable d'exécution de travaux de réhabilitation : reprise et rénovation d'ouvrage de Gros ?uvre</option>
+							<option value="FCIL Restauration Meubles Anciens">FCIL Restauration Meubles Anciens</option>
+							<option value="FCIL Santé et bien être de la personne âgée">FCIL Santé et bien être de la personne âgée</option>
+							<option value="FCIL Scénographie de la communication">FCIL Scénographie de la communication</option>
+							<option value="FCIL Secrétaire juridique">FCIL Secrétaire juridique</option>
+							<option value="FCIL Secrétariat Assistant Médico-Social">FCIL Secrétariat Assistant Médico-Social</option>
+							<option value="FCIL Secrétariat Médico Social">FCIL Secrétariat Médico Social</option>
+							<option value="FCIL Service aux personnes en environnement numérique">FCIL Service aux personnes en environnement numérique</option>
+							<option value="FCIL Services aéroportuaires">FCIL Services aéroportuaires</option>
+							<option value="FCIL Smart Home">FCIL Smart Home</option>
+							<option value="FCIL Sociale Esthétique">FCIL Sociale Esthétique</option>
+							<option value="FCIL Sommellerie">FCIL Sommellerie</option>
+							<option value="FCIL Son et éclairage en spectacle vivant">FCIL Son et éclairage en spectacle vivant</option>
+							<option value="FCIL Technicien de la Transition Energétique du Bâtiment">FCIL Technicien de la Transition Energétique du Bâtiment</option>
+							<option value="FCIL Technicien de maintenance et de déploiement numérique">FCIL Technicien de maintenance et de déploiement numérique</option>
+							<option value="FCIL Technicien de prise en charge de la personne âgée non autonome option maladie d'alzheimer">FCIL Technicien de prise en charge de la personne âgée non autonome option maladie d'alzheimer</option>
+							<option value="FCIL Technicien de systèmes de sécurité et d'incendie">FCIL Technicien de systèmes de sécurité et d'incendie</option>
+							<option value="FCIL Technicien des systèmes auxiliaires et véhicules électriques">FCIL Technicien des systèmes auxiliaires et véhicules électriques</option>
+							<option value="FCIL Technicien en Maintenance et Conduite de Centrales Photovoltaïques">FCIL Technicien en Maintenance et Conduite de Centrales Photovoltaïques</option>
+							<option value="FCIL Technicien motoriste option Mécanique Hors Bord">FCIL Technicien motoriste option Mécanique Hors Bord</option>
+							<option value="FCIL Technicien motoriste option Mécanique In Bord">FCIL Technicien motoriste option Mécanique In Bord</option>
+							<option value="FCIL Technicien polyvalent dans les systèmes audiovisuels professionnels">FCIL Technicien polyvalent dans les systèmes audiovisuels professionnels</option>
+							<option value="FCIL Technicien réseaux très haut débit fibre optique">FCIL Technicien réseaux très haut débit fibre optique</option>
+							<option value="FCIL Technicien sur Lignes de Productions Industrielles">FCIL Technicien sur Lignes de Productions Industrielles</option>
+							<option value="FCIL Technicien sur centre d'usinage bois 3 et 5 axes - Concepteur sur modeleur 3D">FCIL Technicien sur centre d'usinage bois 3 et 5 axes - Concepteur sur modeleur 3D</option>
+							<option value="FCIL Technicien(ne) réseaux et services numériques">FCIL Technicien(ne) réseaux et services numériques</option>
+							<option value="FCIL Technico-commercial en équipement de la maison et du multimédia">FCIL Technico-commercial en équipement de la maison et du multimédia</option>
+							<option value="FCIL Techniques spécifiques Couture et Luxe">FCIL Techniques spécifiques Couture et Luxe</option>
+							<option value="FCIL Visual Merchandising">FCIL Visual Merchandising</option>
+							<option value="FCIL Véhicules nautiques motorisés (Jet ski)">FCIL Véhicules nautiques motorisés (Jet ski)</option>
+							<option value="FCIL administration de projets dans le secteur du tourisme">FCIL administration de projets dans le secteur du tourisme</option>
+							<option value="FCIL agent hydrothermal">FCIL agent hydrothermal</option>
+							<option value="FCIL classe passerelle BTS">FCIL classe passerelle BTS</option>
+							<option value="FCIL classe passerelle BTS option production">FCIL classe passerelle BTS option production</option>
+							<option value="FCIL classe passerelle BTS option service">FCIL classe passerelle BTS option service</option>
+							<option value="FCIL maintenance équipements audiovisuels et électroménager">FCIL maintenance équipements audiovisuels et électroménager</option>
+							<option value="FCIL préparation aux concours de la sécurité publique et civile">FCIL préparation aux concours de la sécurité publique et civile</option>
+							<option value="FCIL secrétariat médical">FCIL secrétariat médical</option>
+							<option value="Finitions, aménagement des bâtiments: conception et réalisation">Finitions, aménagement des bâtiments: conception et réalisation</option>
+							<option value="Fluide, énergie, domotique - option A génie climatique et fluidique">Fluide, énergie, domotique - option A génie climatique et fluidique</option>
+							<option value="Fluide, énergie, domotique - option B froid et conditionnement d'air">Fluide, énergie, domotique - option B froid et conditionnement d'air</option>
+							<option value="Fluide, énergie, domotique - option C domotique et bâtiment communicants">Fluide, énergie, domotique - option C domotique et bâtiment communicants</option>
+							<option value="Fonderie">Fonderie</option>
+							<option value="Forge">Forge</option>
+							<option value="Formation Bac + 3">Formation Bac + 3</option>
+							<option value="Formation Bac + 4">Formation Bac + 4</option>
+							<option value="Formation Bac+6">Formation Bac+6</option>
+							<option value="Formation Supérieure de Spécialisation">Formation Supérieure de Spécialisation</option>
+							<option value="Formation d'ingénieur Bac + 5">Formation d'ingénieur Bac + 5</option>
+							<option value="Formation de base aux métiers du théâtre">Formation de base aux métiers du théâtre</option>
+							<option value="Formation des écoles de commerce et de management Bac + 3">Formation des écoles de commerce et de management Bac + 3</option>
+							<option value="Formation des écoles de commerce et de management Bac + 4">Formation des écoles de commerce et de management Bac + 4</option>
+							<option value="Formation des écoles de commerce et de management Bac + 5">Formation des écoles de commerce et de management Bac + 5</option>
+							<option value="Formation des écoles supérieure d'art Bac + 3">Formation des écoles supérieure d'art Bac + 3</option>
+							<option value="Formation des écoles supérieure d'art Bac + 5">Formation des écoles supérieure d'art Bac + 5</option>
+							<option value="Formation des écoles supérieures de cuisine Bac +3">Formation des écoles supérieures de cuisine Bac +3</option>
+							<option value="Formation des écoles supérieures de cuisine Bac +4">Formation des écoles supérieures de cuisine Bac +4</option>
+							<option value="Formation valant grade de licence">Formation valant grade de licence</option>
+							<option value="Frontières du vivant">Frontières du vivant</option>
+							<option value="Gestion">Gestion</option>
+							<option value="Gestion administrative et commerciale des organisations">Gestion administrative et commerciale des organisations</option>
+							<option value="Gestion de la PME">Gestion de la PME</option>
+							<option value="Gestion des entreprises et des administrations">Gestion des entreprises et des administrations</option>
+							<option value="Gestion des transports et logistique associée">Gestion des transports et logistique associée</option>
+							<option value="Gestion et maitrise de l'eau">Gestion et maitrise de l'eau</option>
+							<option value="Gestion et protection de la nature">Gestion et protection de la nature</option>
+							<option value="Gestion et protection de la nature / DE d'alpinisme-accompagnateur en moyenne montagne">Gestion et protection de la nature / DE d'alpinisme-accompagnateur en moyenne montagne</option>
+							<option value="Gestion forestière">Gestion forestière</option>
+							<option value="Gestion logistique et transport">Gestion logistique et transport</option>
+							<option value="Gestionnaire d'unité commerciale (option généraliste / option spécialisée) (bac +2)">Gestionnaire d'unité commerciale (option généraliste / option spécialisée) (bac +2)</option>
+							<option value="Graphisme">Graphisme</option>
+							<option value="Génie biologique Parcours agronomie">Génie biologique Parcours agronomie</option>
+							<option value="Génie biologique Parcours diététique et nutrition">Génie biologique Parcours diététique et nutrition</option>
+							<option value="Génie biologique parcours biologie médicale et biotechnologie">Génie biologique parcours biologie médicale et biotechnologie</option>
+							<option value="Génie biologique parcours sciences de l'aliment et biotechnologie">Génie biologique parcours sciences de l'aliment et biotechnologie</option>
+							<option value="Génie biologique parcours sciences de l'environnement et écotechnologies">Génie biologique parcours sciences de l'environnement et écotechnologies</option>
+							<option value="Génie chimique génie des procédés">Génie chimique génie des procédés</option>
+							<option value="Génie civil">Génie civil</option>
+							<option value="Génie civil - Construction durable">Génie civil - Construction durable</option>
+							<option value="génie des équipements agricoles">génie des équipements agricoles</option>
+							<option value="Génie industriel et maintenance">Génie industriel et maintenance</option>
+							<option value="Génie mécanique et productique">Génie mécanique et productique</option>
+							<option value="Génie thermique et énergie">Génie thermique et énergie</option>
+							<option value="Génie électrique et informatique industrielle">Génie électrique et informatique industrielle</option>
+							<option value="Géographie et aménagement">Géographie et aménagement</option>
+							<option value="Géologie appliquée">Géologie appliquée</option>
+							<option value="Géomètre-Géomaticien (bac +2)">Géomètre-Géomaticien (bac +2)</option>
+							<option value="Histoire">Histoire</option>
+							<option value="Histoire / Allemand">Histoire / Allemand</option>
+							<option value="Histoire / Anglais">Histoire / Anglais</option>
+							<option value="Histoire / Géographie">Histoire / Géographie</option>
+							<option value="Histoire de l'art et archéologie">Histoire de l'art et archéologie</option>
+							<option value="Histoire des Arts">Histoire des Arts</option>
+							<option value="Humanités">Humanités</option>
+							<option value="Hygiène Sécurité Environnement">Hygiène Sécurité Environnement</option>
+							<option value="Hôtellerie restauration">Hôtellerie restauration</option>
+							<option value="Industries céramiques">Industries céramiques</option>
+							<option value="Information communication Parcours communication des organisations">Information communication Parcours communication des organisations</option>
+							<option value="Information communication Parcours information numérique dans les organisations">Information communication Parcours information numérique dans les organisations</option>
+							<option value="Information communication Parcours journalisme">Information communication Parcours journalisme</option>
+							<option value="Information communication Parcours métiers du livre et du patrimoine">Information communication Parcours métiers du livre et du patrimoine</option>
+							<option value="Information communication Parcours publicité">Information communication Parcours publicité</option>
+							<option value="Information et communication">Information et communication</option>
+							<option value="Informatique">Informatique</option>
+							<option value="Informatique d'Organisation des Systèmes d'Information">Informatique d'Organisation des Systèmes d'Information</option>
+							<option value="Informatique, Management">Informatique, Management</option>
+							<option value="Informatique, Mathématiques">Informatique, Mathématiques</option>
+							<option value="Informatique, Sciences de la vie">Informatique, Sciences de la vie</option>
+							<option value="Innovation sociale">Innovation sociale</option>
+							<option value="Innovations textiles - Option A : Structures">Innovations textiles - Option A : Structures</option>
+							<option value="Innovations textiles - Option B : Traitements">Innovations textiles - Option B : Traitements</option>
+							<option value="Instrument">Instrument</option>
+							<option value="Intervention Sociale">Intervention Sociale</option>
+							<option value="Judo-Jujitsu">Judo-Jujitsu</option>
+							<option value="Langues étrangères appliquées">Langues étrangères appliquées</option>
+							<option value="Langues, littératures & civilisations étrangères et régionales">Langues, littératures & civilisations étrangères et régionales</option>
+							<option value="Lettres">Lettres</option>
+							<option value="Lettres / Anglais">Lettres / Anglais</option>
+							<option value="Lettres / Histoire">Lettres / Histoire</option>
+							<option value="Lettres / Sciences du langage">Lettres / Sciences du langage</option>
+							<option value="Lettres, langues">Lettres, langues</option>
+							<option value="Licence professionnelle">Licence professionnelle</option>
+							<option value="Livre">Livre</option>
+							<option value="MP2I">MP2I</option>
+							<option value="MPSI">MPSI</option>
+							<option value="Maintenance des installations oléohydrauliques et pneumatiques">Maintenance des installations oléohydrauliques et pneumatiques</option>
+							<option value="Maintenance des matériels de construction et de manutention">Maintenance des matériels de construction et de manutention</option>
+							<option value="Maintenance des systèmes - option A Systèmes de production">Maintenance des systèmes - option A Systèmes de production</option>
+							<option value="Maintenance des systèmes - option B Systèmes énergétiques et fluidiques">Maintenance des systèmes - option B Systèmes énergétiques et fluidiques</option>
+							<option value="Maintenance des systèmes - option C Systèmes éoliens">Maintenance des systèmes - option C Systèmes éoliens</option>
+							<option value="Maintenance des systèmes électro-navals">Maintenance des systèmes électro-navals</option>
+							<option value="Maintenance des véhicules option motocycles">Maintenance des véhicules option motocycles</option>
+							<option value="Maintenance des véhicules option voitures particulières">Maintenance des véhicules option voitures particulières</option>
+							<option value="Maintenance des véhicules option véhicules de transport routier">Maintenance des véhicules option véhicules de transport routier</option>
+							<option value="Maintenance hôtelière, hospitalière et immobilière">Maintenance hôtelière, hospitalière et immobilière</option>
+							<option value="Management Commercial Opérationnel">Management Commercial Opérationnel</option>
+							<option value="Management en hôtellerie restauration">Management en hôtellerie restauration</option>
+							<option value="Management opérationnel de la sécurité">Management opérationnel de la sécurité</option>
+							<option value="Management économique de la construction">Management économique de la construction</option>
+							<option value="Manager en Biotechnologies (bac +5)">Manager en Biotechnologies (bac +5)</option>
+							<option value="Maquettes et prototypes">Maquettes et prototypes</option>
+							<option value="Mathématique - Préparation aux écoles d'ingénieurs">Mathématique - Préparation aux écoles d'ingénieurs</option>
+							<option value="Mathématiques">Mathématiques</option>
+							<option value="Mathématiques et applications">Mathématiques et applications</option>
+							<option value="Mathématiques et informatique appliquées aux sciences humaines et sociales">Mathématiques et informatique appliquées aux sciences humaines et sociales</option>
+							<option value="Mathématiques, Physique et Sciences pour l'Ingénieur">Mathématiques, Physique et Sciences pour l'Ingénieur</option>
+							<option value="Mathématiques, Sciences de la vie">Mathématiques, Sciences de la vie</option>
+							<option value="Mathématiques, physique, chimie, informatique">Mathématiques, physique, chimie, informatique</option>
+							<option value="Matériaux">Matériaux</option>
+							<option value="Mesures physiques">Mesures physiques</option>
+							<option value="Mise à niveau pour l'accès au BTS MASEN">Mise à niveau pour l'accès au BTS MASEN</option>
+							<option value="Mode">Mode</option>
+							<option value="Moteur à combustion interne">Moteur à combustion interne</option>
+							<option value="Musicologie">Musicologie</option>
+							<option value="Mécanique">Mécanique</option>
+							<option value="Mécatronique navale">Mécatronique navale</option>
+							<option value="Médiations citoyennes : éducation, culture, social, environnement">Médiations citoyennes : éducation, culture, social, environnement</option>
+							<option value="Métiers de l'animation sociale, socio-éducative et socio-culturelle">Métiers de l'animation sociale, socio-éducative et socio-culturelle</option>
+							<option value="Métiers de l'audio-visuel opt : gestion de la production">Métiers de l'audio-visuel opt : gestion de la production</option>
+							<option value="Métiers de l'audio-visuel opt : montage et post-production">Métiers de l'audio-visuel opt : montage et post-production</option>
+							<option value="Métiers de l'audio-visuel opt : métiers de l'image">Métiers de l'audio-visuel opt : métiers de l'image</option>
+							<option value="Métiers de l'audio-visuel opt : métiers du son">Métiers de l'audio-visuel opt : métiers du son</option>
+							<option value="Métiers de l'audio-visuel opt : techn. d'ingeniérie et exploit. équipements">Métiers de l'audio-visuel opt : techn. d'ingeniérie et exploit. équipements</option>
+							<option value="Métiers de l'eau">Métiers de l'eau</option>
+							<option value="Métiers de l'esthétique-cosmétique-parfumerie">Métiers de l'esthétique-cosmétique-parfumerie</option>
+							<option value="Métiers de la chimie">Métiers de la chimie</option>
+							<option value="Métiers de la cohésion sociale">Métiers de la cohésion sociale</option>
+							<option value="Métiers de la coiffure">Métiers de la coiffure</option>
+							<option value="Métiers de la forme">Métiers de la forme</option>
+							<option value="Métiers de la mesure">Métiers de la mesure</option>
+							<option value="Métiers de la mode-chaussure et maroquinerie">Métiers de la mode-chaussure et maroquinerie</option>
+							<option value="Métiers de la mode-vêtements">Métiers de la mode-vêtements</option>
+							<option value="Métiers des Services à l'environnement">Métiers des Services à l'environnement</option>
+							<option value="Métiers des bibliothèques et de la documentation">Métiers des bibliothèques et de la documentation</option>
+							<option value="Métiers du géomètre-topographe et de la modélisation numérique">Métiers du géomètre-topographe et de la modélisation numérique</option>
+							<option value="Métiers du livre">Métiers du livre</option>
+							<option value="Métiers du multimédia et de l'internet">Métiers du multimédia et de l'internet</option>
+							<option value="Notariat">Notariat</option>
+							<option value="Numérique">Numérique</option>
+							<option value="Négociation et digitalisation de la Relation Client">Négociation et digitalisation de la Relation Client</option>
+							<option value="Objet">Objet</option>
+							<option value="Opticien-Lunetier">Opticien-Lunetier</option>
+							<option value="Option lettres et sciences humaines (St Cyr)">Option lettres et sciences humaines (St Cyr)</option>
+							<option value="Organisateur de réception">Organisateur de réception</option>
+							<option value="Ornement">Ornement</option>
+							<option value="PCSI">PCSI</option>
+							<option value="PTSI">PTSI</option>
+							<option value="Packaging, emballage et conditionnement">Packaging, emballage et conditionnement</option>
+							<option value="Parcours d'Accès Spécifique Santé (PASS)">Parcours d'Accès Spécifique Santé (PASS)</option>
+							<option value="Parcours mathématiques-physique">Parcours mathématiques-physique</option>
+							<option value="Parcours physique-chimie">Parcours physique-chimie</option>
+							<option value="Parcours scientifique renforcé">Parcours scientifique renforcé</option>
+							<option value="Patrimoine">Patrimoine</option>
+							<option value="Paysage">Paysage</option>
+							<option value="Paysagiste concepteur">Paysagiste concepteur</option>
+							<option value="Peinture décoration">Peinture décoration</option>
+							<option value="Philosophie">Philosophie</option>
+							<option value="Photographie">Photographie</option>
+							<option value="Physique">Physique</option>
+							<option value="Physique, chimie">Physique, chimie</option>
+							<option value="Pilotage des procédés">Pilotage des procédés</option>
+							<option value="Pluridisciplinaire">Pluridisciplinaire</option>
+							<option value="Podo-orthésiste">Podo-orthésiste</option>
+							<option value="Pratique et gestion des activités physiques, sportives et de loisirs pour les publics séniors">Pratique et gestion des activités physiques, sportives et de loisirs pour les publics séniors</option>
+							<option value="Prep'ISIMA">Prep'ISIMA</option>
+							<option value="productions animales">productions animales</option>
+							<option value="Production horticole">Production horticole</option>
+							<option value="Production, contrôles et qualité des produits de santé">Production, contrôles et qualité des produits de santé</option>
+							<option value="Professions immobilières">Professions immobilières</option>
+							<option value="Prothésiste dentaire">Prothésiste dentaire</option>
+							<option value="Prothésiste orthésiste">Prothésiste orthésiste</option>
+							<option value="Préparation aux concours des écoles de commerce, Parcours Economie- Finance">Préparation aux concours des écoles de commerce, Parcours Economie- Finance</option>
+							<option value="Préparation aux concours des écoles de commerce, Parcours Gestion">Préparation aux concours des écoles de commerce, Parcours Gestion</option>
+							<option value="Psychologie">Psychologie</option>
+							<option value="Pêche et gestion de l'environnement marin">Pêche et gestion de l'environnement marin</option>
+							<option value="Qualité, logistique industrielle et organisation">Qualité, logistique industrielle et organisation</option>
+							<option value="Responsable de projets informatiques (bac +3)">Responsable de projets informatiques (bac +3)</option>
+							<option value="Responsable technique en bâtiment et travaux publics (bac +2)">Responsable technique en bâtiment et travaux publics (bac +2)</option>
+							<option value="Réseaux et télécommunications">Réseaux et télécommunications</option>
+							<option value="STAPS, Sciences pour l'ingénieur">STAPS, Sciences pour l'ingénieur</option>
+							<option value="Santé environnement : Techniques de laboratoire">Santé environnement : Techniques de laboratoire</option>
+							<option value="Santé et société">Santé et société</option>
+							<option value="Science et génie des matériaux">Science et génie des matériaux</option>
+							<option value="Science politique">Science politique</option>
+							<option value="Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Grade Licence">Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Grade Licence</option>
+							<option value="Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Grade Master">Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Grade Master</option>
+							<option value="Sciences biomédicales">Sciences biomédicales</option>
+							<option value="Sciences de l'Homme, Anthropologie, Ethnologie">Sciences de l'Homme, Anthropologie, Ethnologie</option>
+							<option value="Sciences de l'éducation">Sciences de l'éducation</option>
+							<option value="Sciences de la Terre et Sciences Physiques">Sciences de la Terre et Sciences Physiques</option>
+							<option value="Sciences de la Terre et environnement">Sciences de la Terre et environnement</option>
+							<option value="Sciences de la Vie et de la Terre : préparation aux concours B Agro et Véto (Sites Saint Charles)">Sciences de la Vie et de la Terre : préparation aux concours B Agro et Véto (Sites Saint Charles)</option>
+							<option value="Sciences de la terre">Sciences de la terre</option>
+							<option value="Sciences de la vie">Sciences de la vie</option>
+							<option value="Sciences de la vie et de la terre">Sciences de la vie et de la terre</option>
+							<option value="Sciences du langage">Sciences du langage</option>
+							<option value="Sciences et Humanités">Sciences et Humanités</option>
+							<option value="Sciences et Techniques des Activités Physiques et Sportives">Sciences et Techniques des Activités Physiques et Sportives</option>
+							<option value="Sciences et technologies">Sciences et technologies</option>
+							<option value="Sciences et technologies des aliments spécialité Aliments et processus technologiques">Sciences et technologies des aliments spécialité Aliments et processus technologiques</option>
+							<option value="Sciences et technologies des aliments spécialité Produits céréaliers">Sciences et technologies des aliments spécialité Produits céréaliers</option>
+							<option value="Sciences et technologies des aliments spécialité Produits laitiers">Sciences et technologies des aliments spécialité Produits laitiers</option>
+							<option value="Sciences et technologies des aliments spécialité Viandes et produits de la pêche">Sciences et technologies des aliments spécialité Viandes et produits de la pêche</option>
+							<option value="Sciences pour l'ingénieur">Sciences pour l'ingénieur</option>
+							<option value="Sciences pour la santé">Sciences pour la santé</option>
+							<option value="Sciences sanitaires et sociales">Sciences sanitaires et sociales</option>
+							<option value="Sciences sociales">Sciences sociales</option>
+							<option value="Service et prestation des secteurs sanitaire et social">Service et prestation des secteurs sanitaire et social</option>
+							<option value="Services financiers">Services financiers</option>
+							<option value="Services informatiques aux organisations">Services informatiques aux organisations</option>
+							<option value="Services numériques aux organisations">Services numériques aux organisations</option>
+							<option value="Sociologie">Sociologie</option>
+							<option value="Spectacle">Spectacle</option>
+							<option value="Statistique et informatique décisionnelle">Statistique et informatique décisionnelle</option>
+							<option value="Support à l'action managériale">Support à l'action managériale</option>
+							<option value="Surf">Surf</option>
+							<option value="Systèmes constructifs bois et habitat">Systèmes constructifs bois et habitat</option>
+							<option value="Systèmes numériques - Option informatique et réseaux">Systèmes numériques - Option informatique et réseaux</option>
+							<option value="Systèmes numériques - Option électronique et communication">Systèmes numériques - Option électronique et communication</option>
+							<option value="Systèmes photoniques">Systèmes photoniques</option>
+							<option value="TB">TB</option>
+							<option value="TPC">TPC</option>
+							<option value="TSI">TSI</option>
+							<option value="Technicien ascensoriste, service et modernisation">Technicien ascensoriste, service et modernisation</option>
+							<option value="Technicien de la mer et du littoral">Technicien de la mer et du littoral</option>
+							<option value="Technicien des services à l'énergie">Technicien des services à l'énergie</option>
+							<option value="Technicien en chaudronnerie aéronautique et spatiale">Technicien en chaudronnerie aéronautique et spatiale</option>
+							<option value="Technicien en peinture aéronautique">Technicien en peinture aéronautique</option>
+							<option value="Technicien en réseau électrique">Technicien en réseau électrique</option>
+							<option value="Technicien en énergies renouvelables (option thermique)">Technicien en énergies renouvelables (option thermique)</option>
+							<option value="Technicien en énergies renouvelables (option énergie électrique)">Technicien en énergies renouvelables (option énergie électrique)</option>
+							<option value="Technicien supérieur de maintenance et d'exploitation en climatique (bac +2)">Technicien supérieur de maintenance et d'exploitation en climatique (bac +2)</option>
+							<option value="Technicien(ne) en soudage">Technicien(ne) en soudage</option>
+							<option value="Technicien(ne) en tuyauterie">Technicien(ne) en tuyauterie</option>
+							<option value="Technicien(ne) supérieur(e) en maintenance industrielle (bac +2)">Technicien(ne) supérieur(e) en maintenance industrielle (bac +2)</option>
+							<option value="Techniciens Spécialisés de la Construction">Techniciens Spécialisés de la Construction</option>
+							<option value="Technico-commercial (BTSA)">Technico-commercial (BTSA)</option>
+							<option value="Techniques de commercialisation">Techniques de commercialisation</option>
+							<option value="Techniques et services en matériels agricoles">Techniques et services en matériels agricoles</option>
+							<option value="Technologies de l'organisation dans les professions de santé">Technologies de l'organisation dans les professions de santé</option>
+							<option value="Tennis de table">Tennis de table</option>
+							<option value="Théologie">Théologie</option>
+							<option value="Théologie Catholique">Théologie Catholique</option>
+							<option value="Théologie Protestante">Théologie Protestante</option>
+							<option value="Titre professionnel - Organisateur de transports aériens ou maritimes de marchandises (Bac +2)">Titre professionnel - Organisateur de transports aériens ou maritimes de marchandises (Bac +2)</option>
+							<option value="Tourisme">Tourisme</option>
+							<option value="Traitement des matériaux">Traitement des matériaux</option>
+							<option value="Travaux publics">Travaux publics</option>
+							<option value="Vendeur-conseil en produits techniques pour l'habitat">Vendeur-conseil en produits techniques pour l'habitat</option>
+							<option value="Viticulture-Oenologie">Viticulture-Oenologie</option>
+							<option value="Voile multi-supports jusqu'à 6 miles nautique d'un abri">Voile multi-supports jusqu'à 6 miles nautique d'un abri</option>
+							<option value="Vélo tout terrain">Vélo tout terrain</option>
+							<option value="Webmaster et gestionnaire d'intranet">Webmaster et gestionnaire d'intranet</option>
+
+
+
+
+						</select>
+						</div>	
+					</div>
+					<div  style = "height:10px;" > </div>	
+					
+
+					<div class='div_saut_ligne' style = "height:10px;" > </div>	
+					
+					
+
+				
+				</div>
+				
+				<div id="droite">
+					<div id="colonne_droite" >
+						<br>
+						<h4 class = "intro_droit">Voici les probabilités pour que tu choisisses une première générale, professionnelle ou technologique: </h4>
+						<div id="info_troisieme_liste">&nbsp</div>
+						<div id = "photo_eleve"><br><br><img class="img_eleve" src="{% static 'image/photo_eleve.jpg'%}" alt="logo"></div>
+						<br>
+						<div><h3 id="affiche_gen" class = "texte_droit" ></h3>	</div>
+						<div><h3 id="affiche_pro" class = "texte_droit" ></h3>	</div>
+						<div><h3 id="affiche_tech" class = "texte_droit" ></h3>	</div>					
+					</div>
+				</div>
+			
+			
+
+				<footer>
+					<div>
+						<h3>Mon lycée</h3>
+						<p>Lycée Newton <i>localisé</i> au 1 Place Jules Verne 92110 Clichy </p>
+						<p><i>Numéro de téléphone: </i><u> 01 41 06 78 78</u></p>
+						<p><i>Adresse mail :</i><u> lyc-newton-clichy@ac-versailles.fr</u></p>
+						<p><i>Site internet</i> : <u><a href="https://www.lycee-newton.fr/actualite">https://www.lycee-newton.fr/actualite</a></u></p>
+						
+					</div>
+					<div>
+						<h3>Auteurs</h3>
+						<p>Jules Taffoureau : Front-end</p>
+						<p>Anas Knanoua : Back-end</p>
+						<p>Sylvain Gibaud : Superviseur</p>
+					</div>
+					<div>
+						<h3>Contactez nous !</h3>
+						<p>jules.taffoureau@gmail.com</p>
+						<p>pro.anasknanoua@gmail.com</p>
+						<p>mail@professeurgibaud.ovh</p>
+					</div>
+					
+				</footer>
+
+
+			
+			
+
+			<br><br><br><br>
+			
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+<div id="div_lieux_choice">
+<datalist id = "lieux_choice">
+<option value="Abbeville">
+<option value="Agen">
+<option value="Agneaux">
+<option value="Ahun">
+<option value="Aiguillon">
+<option value="Ain">
+<option value="Aire-sur-l'Adour">
+<option value="Aire-sur-la-Lys">
+<option value="Airion">
+<option value="Aisne">
+<option value="Aix-en-Provence">
+<option value="Aix-les-Bains">
+<option value="Ajaccio">
+<option value="Albert">
+<option value="Albertville">
+<option value="Albi">
+<option value="Alençon">
+<option value="Alfortville">
+<option value="Algrange">
+<option value="Allier">
+<option value="Allonnes">
+<option value="Alpes-Maritimes">
+<option value="Alpes-de-Haute-Provence">
+<option value="Altkirch">
+<option value="Alès">
+<option value="Ambilly">
+<option value="Amboise">
+<option value="Ambérieu-en-Bugey">
+<option value="Amiens">
+<option value="Amilly">
+<option value="Ancenis-Saint-Géréon">
+<option value="Andrézieux-Bouthéon">
+<option value="Angers">
+<option value="Anglet">
+<option value="Angoulême">
+<option value="Aniche">
+<option value="Annecy">
+<option value="Annemasse">
+<option value="Anneyron">
+<option value="Annonay">
+<option value="Antibes">
+<option value="Antony">
+<option value="Arcachon">
+<option value="Arcueil">
+<option value="Ardennes">
+<option value="Ardèche">
+<option value="Argelès-sur-Mer">
+<option value="Argentan">
+<option value="Argenteuil">
+<option value="Argonay">
+<option value="Ariège">
+<option value="Arles">
+<option value="Armentières">
+<option value="Arnage">
+<option value="Arnouville">
+<option value="Arpajon">
+<option value="Arradon">
+<option value="Arras">
+<option value="Art-sur-Meurthe">
+<option value="Asnières-sur-Seine">
+<option value="Athis-Mons">
+<option value="Aubagne">
+<option value="Aube">
+<option value="Aubenas">
+<option value="Aubervilliers">
+<option value="Aubin">
+<option value="Aubière">
+<option value="Aubusson">
+<option value="Auch">
+<option value="Aude">
+<option value="Audincourt">
+<option value="Aulnay-sous-Bois">
+<option value="Aulnoye-Aymeries">
+<option value="Auray">
+<option value="Aurillac">
+<option value="Autun">
+<option value="Auvergne-Rhône-Alpes">
+<option value="Auxerre">
+<option value="Auxonne">
+<option value="Auzeville-Tolosane">
+<option value="Avallon">
+<option value="Avesnes-sur-Helpe">
+<option value="Aveyron">
+<option value="Avignon">
+<option value="Avion">
+<option value="Avize">
+<option value="Avon">
+<option value="Avranches">
+<option value="Azay-le-Rideau">
+<option value="BARCELONA">
+<option value="Bagneux">
+<option value="Bagnolet">
+<option value="Bagnols-sur-Cèze">
+<option value="Bagnères-de-Bigorre">
+<option value="Baie-Mahault">
+<option value="Balma">
+<option value="Bapaume">
+<option value="Bar-le-Duc">
+<option value="Bar-sur-Seine">
+<option value="Barbezieux-Saint-Hilaire">
+<option value="Barentin">
+<option value="Bas-Rhin">
+<option value="Basse-Goulaine">
+<option value="Basse-Terre">
+<option value="Bastia">
+<option value="Bavilliers">
+<option value="Bayeux">
+<option value="Bayonne">
+<option value="Bazas">
+<option value="Beaucamps-Ligny">
+<option value="Beaugency">
+<option value="Beaumont-de-Lomagne">
+<option value="Beaumont-sur-Oise">
+<option value="Beaune">
+<option value="Beaupréau-en-Mauges">
+<option value="Beauvais">
+<option value="Belfort">
+<option value="Bellac">
+<option value="Bellefontaine">
+<option value="Bellerive-sur-Allier">
+<option value="Berck">
+<option value="Bergerac">
+<option value="Bernay">
+<option value="Bernay-Neuvy-en-Champagne">
+<option value="Besançon">
+<option value="Beuvry">
+<option value="Biarritz">
+<option value="Bischwiller">
+<option value="Blagnac">
+<option value="Blanquefort">
+<option value="Blaye">
+<option value="Blois">
+<option value="Bobigny">
+<option value="Bohain-en-Vermandois">
+<option value="Bois-Colombes">
+<option value="Bois-Guillaume">
+<option value="Bolbec">
+<option value="Bondoufle">
+<option value="Bondy">
+<option value="Bonneville">
+<option value="Bordeaux">
+<option value="Borgo">
+<option value="Bort-les-Orgues">
+<option value="Bouches-du-Rhône">
+<option value="Bouguenais">
+<option value="Boulazac Isle Manoire">
+<option value="Boulogne-Billancourt">
+<option value="Boulogne-sur-Mer">
+<option value="Bourcefranc-le-Chapus">
+<option value="Bourg-de-Péage">
+<option value="Bourg-en-Bresse">
+<option value="Bourg-lès-Valence">
+<option value="Bourganeuf">
+<option value="Bourges">
+<option value="Bourgogne-Franche-Comté">
+<option value="Bourgoin-Jallieu">
+<option value="Bouxwiller">
+<option value="Bras-Panon">
+<option value="Brens">
+<option value="Bressuire">
+<option value="Brest">
+<option value="Bretagne">
+<option value="Briançon">
+<option value="Brie-Comte-Robert">
+<option value="Brignoles">
+<option value="Brive-la-Gaillarde">
+<option value="Brives-Charensac">
+<option value="Bron">
+<option value="Bruay-la-Buissière">
+<option value="Brumath">
+<option value="Brunoy">
+<option value="Bruz">
+<option value="Brétigny-sur-Orge">
+<option value="Buc">
+<option value="Bures-sur-Yvette">
+<option value="Bussy-Saint-Georges">
+<option value="Buxières-lès-Villiers">
+<option value="Bègles">
+<option value="Bétheny">
+<option value="Béthune">
+<option value="Béziers">
+<option value="CASABLANCA">
+<option value="Cachan">
+<option value="Caen">
+<option value="Cagnes-sur-Mer">
+<option value="Cahors">
+<option value="Calais">
+<option value="Calvados">
+<option value="Camblanes-et-Meynac">
+<option value="Cambrai">
+<option value="Canet-en-Roussillon">
+<option value="Cannes">
+<option value="Cantal">
+<option value="Canteleu">
+<option value="Capbreton">
+<option value="Capesterre-Belle-Eau">
+<option value="Carcassonne">
+<option value="Carentan-les-Marais">
+<option value="Carhaix-Plouguer">
+<option value="Carmaux">
+<option value="Carpentras">
+<option value="Carquefou">
+<option value="Carvin">
+<option value="Casablanca">
+<option value="Castanet-Tolosan">
+<option value="Castelnau-le-Lez">
+<option value="Castelnaudary">
+<option value="Castelsarrasin">
+<option value="Castres">
+<option value="Caudry">
+<option value="Cavaillon">
+<option value="Cayenne">
+<option value="Cenon">
+<option value="Centre-Val de Loire">
+<option value="Cergy">
+<option value="Cerny">
+<option value="Cesson-Sévigné">
+<option value="Chailly-en-Brie">
+<option value="Challans">
+<option value="Chalon-sur-Saône">
+<option value="Chamalières">
+<option value="Chamarandes-Choignes">
+<option value="Chambray-lès-Tours">
+<option value="Chambéry">
+<option value="Champagne-sur-Seine">
+<option value="Champagnole">
+<option value="Champigny-sur-Marne">
+<option value="Champs-sur-Marne">
+<option value="Chantilly">
+<option value="Chantonnay">
+<option value="Charente">
+<option value="Charente-Maritime">
+<option value="Charleville-Mézières">
+<option value="Charolles">
+<option value="Chartres">
+<option value="Chasseneuil-du-Poitou">
+<option value="Chasseneuil-sur-Bonnieure">
+<option value="Chaumont">
+<option value="Chauny">
+<option value="Chauvigny">
+<option value="Chelles">
+<option value="Chemillé-en-Anjou">
+<option value="Chennevières-sur-Marne">
+<option value="Chenôve">
+<option value="Cher">
+<option value="Cherbourg-en-Cotentin">
+<option value="Cherves-Richemont">
+<option value="Chevilly-Larue">
+<option value="Chinon">
+<option value="Chirongui">
+<option value="Choisy-le-Roi">
+<option value="Cholet">
+<option value="Châlette-sur-Loing">
+<option value="Châlons-en-Champagne">
+<option value="Château-Chinon (Ville)">
+<option value="Château-Gontier-sur-Mayenne">
+<option value="Château-Salins">
+<option value="Château-Thierry">
+<option value="Châteaubriant">
+<option value="Châteaudun">
+<option value="Châteaulin">
+<option value="Châteauneuf-de-Galaure">
+<option value="Châteauroux">
+<option value="Châtellerault">
+<option value="Châtenay-Malabry">
+<option value="Châtillon-sur-Seine">
+<option value="Chéraute">
+<option value="Civray">
+<option value="Clamart">
+<option value="Clermont">
+<option value="Clermont-Ferrand">
+<option value="Clermont-l'Hérault">
+<option value="Clichy">
+<option value="Clichy-sous-Bois">
+<option value="Clisson">
+<option value="Cluny">
+<option value="Cluses">
+<option value="Cognac">
+<option value="Colmar">
+<option value="Colombes">
+<option value="Colomiers">
+<option value="Combs-la-Ville">
+<option value="Compiègne">
+<option value="Condé-sur-l'Escaut">
+<option value="Conflans-Sainte-Honorine">
+<option value="Confolens">
+<option value="Congis-sur-Thérouanne">
+<option value="Contamine-sur-Arve">
+<option value="Contrexéville">
+<option value="Corbeil-Essonnes">
+<option value="Corbie">
+<option value="Corenc">
+<option value="Cormeilles-en-Parisis">
+<option value="Corrèze">
+<option value="Corse">
+<option value="Corse du Sud">
+<option value="Corte">
+<option value="Cosne-Cours-sur-Loire">
+<option value="Cosnes-et-Romain">
+<option value="Cottenchy">
+<option value="Coulogne">
+<option value="Coulommiers">
+<option value="Coulounieix-Chamiers">
+<option value="Courbevoie">
+<option value="Courcelles-Chaussy">
+<option value="Cournon-d'Auvergne">
+<option value="Coutances">
+<option value="Creil">
+<option value="Crest">
+<option value="Creuse">
+<option value="Creutzwald">
+<option value="Crépy-en-Valois">
+<option value="Créteil">
+<option value="Crézancy">
+<option value="Cuffies">
+<option value="Cugnaux">
+<option value="Cusset">
+<option value="Céret">
+<option value="Côte-d'or">
+<option value="Côtes-d'armor">
+<option value="Damigny">
+<option value="Dammarie-les-Lys">
+<option value="Dannemarie-sur-Crète">
+<option value="Dardilly">
+<option value="Darnétal">
+<option value="Davayé">
+<option value="Dax">
+<option value="Deauville">
+<option value="Decazeville">
+<option value="Dechy">
+<option value="Decize">
+<option value="Dembeni">
+<option value="Denain">
+<option value="Derval">
+<option value="Deuil-la-Barre">
+<option value="Deux-Sèvres">
+<option value="Die">
+<option value="Dieppe">
+<option value="Dieuze">
+<option value="Digne-les-Bains">
+<option value="Digoin">
+<option value="Dijon">
+<option value="Dinan">
+<option value="Dinard">
+<option value="Dol-de-Bretagne">
+<option value="Dole">
+<option value="Domont">
+<option value="Dordogne">
+<option value="Douai">
+<option value="Doubs">
+<option value="Dourdan">
+<option value="Douvres-la-Délivrande">
+<option value="Draguignan">
+<option value="Drancy">
+<option value="Drap">
+<option value="Draveil">
+<option value="Dreux">
+<option value="Drôme">
+<option value="Ducos">
+<option value="Dugny">
+<option value="Dunkerque">
+<option value="Décines-Charpieu">
+<option value="Déville-lès-Rouen">
+<option value="Eaubonne">
+<option value="Echirolles">
+<option value="Ecully">
+<option value="Egletons">
+<option value="Elancourt">
+<option value="Elbeuf">
+<option value="Elne">
+<option value="Embrun">
+<option value="Enghien-les-Bains">
+<option value="Epagny Metz-Tessy">
+<option value="Epernay">
+<option value="Epinal">
+<option value="Epinay-sur-Orge">
+<option value="Epinay-sur-Seine">
+<option value="Epron">
+<option value="Ermont">
+<option value="Erstein">
+<option value="Escurolles">
+<option value="Essey-lès-Nancy">
+<option value="Essonne">
+<option value="Estaires">
+<option value="Etampes">
+<option value="Etaples">
+<option value="Etel">
+<option value="Etranger">
+<option value="Eu">
+<option value="Eure">
+<option value="Eure-et-Loir">
+<option value="Evian-les-Bains">
+<option value="Evreux">
+<option value="Evron">
+<option value="Evry-Courcouronnes">
+<option value="Eysines">
+<option value="Faaa">
+<option value="Falaise">
+<option value="Fameck">
+<option value="Faverges-Seythenex">
+<option value="Felletin">
+<option value="Ferney-Voltaire">
+<option value="Ferrières-sur-Ariège">
+<option value="Feurs">
+<option value="Figeac">
+<option value="Finistère">
+<option value="Firminy">
+<option value="Flers">
+<option value="Fleury-les-Aubrais">
+<option value="Flixecourt">
+<option value="Foix">
+<option value="Fondettes">
+<option value="Font-Romeu-Odeillo-Via">
+<option value="Fontaine-lès-Vervins">
+<option value="Fontainebleau">
+<option value="Fontaines">
+<option value="Fontannes">
+<option value="Fontenay-le-Comte">
+<option value="Fontenay-sous-Bois">
+<option value="Forbach">
+<option value="Forges-les-Eaux">
+<option value="Fort-de-France">
+<option value="Fosses">
+<option value="Fouesnant">
+<option value="Fougerolles-Saint-Valbert">
+<option value="Fougères">
+<option value="Foulayronnes">
+<option value="Fourchambault">
+<option value="Fourmies">
+<option value="Franconville">
+<option value="Franqueville-Saint-Pierre">
+<option value="Fresnes">
+<option value="Friville-Escarbotin">
+<option value="Fréjus">
+<option value="Fès">
+<option value="Fécamp">
+<option value="Gagny">
+<option value="Gaillac">
+<option value="Gaillon">
+<option value="Gannat">
+<option value="Gap">
+<option value="Garches">
+<option value="Gard">
+<option value="Gardanne">
+<option value="Garges-lès-Gonesse">
+<option value="Gassin">
+<option value="Genech">
+<option value="Gennevilliers">
+<option value="Gers">
+<option value="Giel-Courteilles">
+<option value="Gien">
+<option value="Gif-sur-Yvette">
+<option value="Gignac">
+<option value="Gignac-la-Nerthe">
+<option value="Gironde">
+<option value="Gisors">
+<option value="Givors">
+<option value="Gières">
+<option value="Gonesse">
+<option value="Gorges">
+<option value="Gourdan-Polignan">
+<option value="Goussainville">
+<option value="Gradignan">
+<option value="Grand Est">
+<option value="Grande-Synthe">
+<option value="Granville">
+<option value="Grasse">
+<option value="Graulhet">
+<option value="Gray">
+<option value="Grenoble">
+<option value="Grigny">
+<option value="Gron">
+<option value="Guadeloupe">
+<option value="Guebwiller">
+<option value="Guer">
+<option value="Gugnécourt">
+<option value="Guingamp">
+<option value="Guyancourt">
+<option value="Guyane">
+<option value="Guéret">
+<option value="Gérardmer">
+<option value="Haguenau">
+<option value="Hasparren">
+<option value="Haubourdin">
+<option value="Haut-Rhin">
+<option value="Haute-Corse">
+<option value="Haute-Garonne">
+<option value="Haute-Loire">
+<option value="Haute-Marne">
+<option value="Haute-Savoie">
+<option value="Haute-Saône">
+<option value="Haute-Vienne">
+<option value="Hautes-Alpes">
+<option value="Hautes-Pyrénées">
+<option value="Hautmont">
+<option value="Hauts de Bienne">
+<option value="Hauts-de-France">
+<option value="Hauts-de-Seine">
+<option value="Hazebrouck">
+<option value="Hennebont">
+<option value="Hirson">
+<option value="Hyères">
+<option value="Hénin-Beaumont">
+<option value="Hérault">
+<option value="Héricourt">
+<option value="Hérouville-Saint-Clair">
+<option value="Ifs">
+<option value="Ile-de-France">
+<option value="Ille-et-Vilaine">
+<option value="Illkirch-Graffenstaden">
+<option value="Illzach">
+<option value="Indre">
+<option value="Indre-et-Loire">
+<option value="Ingersheim">
+<option value="Ingré">
+<option value="Isle">
+<option value="Issoire">
+<option value="Issoudun">
+<option value="Issy-les-Moulineaux">
+<option value="Istres">
+<option value="Isère">
+<option value="Ivry-sur-Seine">
+<option value="Jacob-Bellecombette">
+<option value="Jacou">
+<option value="Jarny">
+<option value="Jaunay-Marigny">
+<option value="Javené">
+<option value="Joigny">
+<option value="Joinville-le-Pont">
+<option value="Jonzac">
+<option value="Jouy-en-Josas">
+<option value="Jouy-le-Moutier">
+<option value="Joué-lès-Tours">
+<option value="Jura">
+<option value="Kourou">
+<option value="L'Aigle">
+<option value="L'Isle-Adam">
+<option value="L'Isle-d'Abeau">
+<option value="L'Isle-sur-la-Sorgue">
+<option value="L'Union">
+<option value="La Baule-Escoublac">
+<option value="La Canourgue">
+<option value="La Celle-Saint-Cloud">
+<option value="La Ciotat">
+<option value="La Courneuve">
+<option value="La Couronne">
+<option value="La Côte-Saint-André">
+<option value="La Ferté Macé">
+<option value="La Ferté-Bernard">
+<option value="La Flèche">
+<option value="La Fère">
+<option value="La Garde">
+<option value="La Gaude">
+<option value="La Grand-Combe">
+<option value="La Guerche-de-Bretagne">
+<option value="La Madeleine">
+<option value="La Motte-Servolex">
+<option value="La Possession">
+<option value="La Queue-en-Brie">
+<option value="La Queue-les-Yvelines">
+<option value="La Ravoire">
+<option value="La Roche-Jaudy">
+<option value="La Roche-sur-Foron">
+<option value="La Roche-sur-Yon">
+<option value="La Rochelle">
+<option value="La Rochette">
+<option value="La Réunion">
+<option value="La Seyne-sur-Mer">
+<option value="La Souterraine">
+<option value="La Trinité">
+<option value="Labège">
+<option value="Lagny-sur-Marne">
+<option value="Lagord">
+<option value="Lamballe-Armor">
+<option value="Lambersart">
+<option value="Lambesc">
+<option value="Lamentin">
+<option value="Landerneau">
+<option value="Landes">
+<option value="Landivisiau">
+<option value="Landrecies">
+<option value="Lanester">
+<option value="Langogne">
+<option value="Langres">
+<option value="Langueux">
+<option value="Lannion">
+<option value="Laon">
+<option value="Lasbordes">
+<option value="Lattes">
+<option value="Laval">
+<option value="Lavelanet">
+<option value="Laxou">
+<option value="Le Ban-Saint-Martin">
+<option value="Le Blanc">
+<option value="Le Blanc-Mesnil">
+<option value="Le Bourget-du-Lac">
+<option value="Le Breuil-sur-Couze">
+<option value="Le Cateau-Cambrésis">
+<option value="Le Chaffaut-Saint-Jurson">
+<option value="Le Chesnay-Rocquencourt">
+<option value="Le Creusot">
+<option value="Le Faou">
+<option value="Le François">
+<option value="Le Gosier">
+<option value="Le Grand-Quevilly">
+<option value="Le Havre">
+<option value="Le Kremlin-Bicêtre">
+<option value="Le Lamentin">
+<option value="Le Landreau">
+<option value="Le Lorrain">
+<option value="Le Mans">
+<option value="Le Marin">
+<option value="Le Mayet-de-Montagne">
+<option value="Le Mesnil-Esnard">
+<option value="Le Mesnil-Saint-Denis">
+<option value="Le Moule">
+<option value="Le Muy">
+<option value="Le Mée-sur-Seine">
+<option value="Le Perreux-sur-Marne">
+<option value="Le Petit-Quevilly">
+<option value="Le Port">
+<option value="Le Portel">
+<option value="Le Puy-en-Velay">
+<option value="Le Raincy">
+<option value="Le Rheu">
+<option value="Le Robert">
+<option value="Le Subdray">
+<option value="Le Tampon">
+<option value="Le Teil">
+<option value="Le Touquet-Paris-Plage">
+<option value="Le Tremblay-sur-Mauldre">
+<option value="Le Vigan">
+<option value="Lectoure">
+<option value="Lempdes">
+<option value="Lens">
+<option value="Les Abymes">
+<option value="Les Andelys">
+<option value="Les Avirons">
+<option value="Les Herbiers">
+<option value="Les Loges-Margueron">
+<option value="Les Moutiers-en-Cinglais">
+<option value="Les Mureaux">
+<option value="Les Ponts-de-Cé">
+<option value="Les Sables-d'Olonne">
+<option value="Les Trois-Bassins">
+<option value="Les Ulis">
+<option value="Lescar">
+<option value="Lesneven">
+<option value="Levallois-Perret">
+<option value="Levier">
+<option value="Libourne">
+<option value="Lieusaint">
+<option value="Lille">
+<option value="Lillebonne">
+<option value="Lillers">
+<option value="Limas">
+<option value="Limeil-Brévannes">
+<option value="Limoges">
+<option value="Limonest">
+<option value="Limoux">
+<option value="Lingolsheim">
+<option value="Lisieux">
+<option value="Livry-Gargan">
+<option value="Liévin">
+<option value="Lodève">
+<option value="Lognes">
+<option value="Loir-et-Cher">
+<option value="Loire">
+<option value="Loire-Atlantique">
+<option value="Loiret">
+<option value="London">
+<option value="Longchamp">
+<option value="Longjumeau">
+<option value="Longperrier">
+<option value="Longuenesse">
+<option value="Longwy">
+<option value="Lons-le-Saunier">
+<option value="Loos">
+<option value="Lopérec">
+<option value="Lorgues">
+<option value="Lorient">
+<option value="Lormont">
+<option value="Lot">
+<option value="Lot-et-Garonne">
+<option value="Loudun">
+<option value="Loudéac">
+<option value="Louhans">
+<option value="Lourdes">
+<option value="Louviers">
+<option value="Louvroil">
+<option value="Lozère">
+<option value="Lucé">
+<option value="Luisant">
+<option value="Lunel">
+<option value="Lunéville">
+<option value="Lure">
+<option value="Luxeuil-les-Bains">
+<option value="Luçon">
+<option value="Lyon">
+<option value="Lyon 1er Arrondissement">
+<option value="Lyon 2e  Arrondissement">
+<option value="Lyon 3e  Arrondissement">
+<option value="Lyon 4e  Arrondissement">
+<option value="Lyon 5e  Arrondissement">
+<option value="Lyon 6e  Arrondissement">
+<option value="Lyon 7e  Arrondissement">
+<option value="Lyon 8e  Arrondissement">
+<option value="Lyon 9e  Arrondissement">
+<option value="Macouria">
+<option value="Madrid">
+<option value="Magnac-Laval">
+<option value="Magnanville">
+<option value="Magny-le-Hongre">
+<option value="Magny-les-Hameaux">
+<option value="Mahina">
+<option value="Maine-et-Loire">
+<option value="Maisons-Alfort">
+<option value="Malakoff">
+<option value="Maltot">
+<option value="Malzéville">
+<option value="Mamirolle">
+<option value="Mamoudzou">
+<option value="Mana">
+<option value="Manche">
+<option value="Manosque">
+<option value="Mantes-la-Jolie">
+<option value="Mantes-la-Ville">
+<option value="Marcy-l'Etoile">
+<option value="Margency">
+<option value="Marignane">
+<option value="Marmande">
+<option value="Marne">
+<option value="Marne-la-Vallée">
+<option value="Marseille">
+<option value="Marseille  1er Arrondissement">
+<option value="Marseille  3e  Arrondissement">
+<option value="Marseille  4e  Arrondissement">
+<option value="Marseille  5e  Arrondissement">
+<option value="Marseille  6e  Arrondissement">
+<option value="Marseille  7e  Arrondissement">
+<option value="Marseille  8e  Arrondissement">
+<option value="Marseille  9e  Arrondissement">
+<option value="Marseille 10e  Arrondissement">
+<option value="Marseille 11e  Arrondissement">
+<option value="Marseille 12e  Arrondissement">
+<option value="Marseille 13e  Arrondissement">
+<option value="Marseille 14e  Arrondissement">
+<option value="Marseille 15e  Arrondissement">
+<option value="Marseille 16e  Arrondissement">
+<option value="Martigues">
+<option value="Martinique">
+<option value="Marvejols">
+<option value="Masseube">
+<option value="Massy">
+<option value="Matoury">
+<option value="Maubeuge">
+<option value="Mauguio">
+<option value="Maule">
+<option value="Maurepas">
+<option value="Mauriac">
+<option value="Mayenne">
+<option value="Mayotte">
+<option value="Mazamet">
+<option value="Meaux">
+<option value="Melle">
+<option value="Melun">
+<option value="Mende">
+<option value="Menton">
+<option value="Merdrignac">
+<option value="Mesnils-sur-Iton">
+<option value="Mesnières-en-Bray">
+<option value="Metz">
+<option value="Meudon">
+<option value="Meurthe-et-Moselle">
+<option value="Meuse">
+<option value="Meylan">
+<option value="Meymac">
+<option value="Mignières">
+<option value="Milhaud">
+<option value="Millau">
+<option value="Miramas">
+<option value="Mirande">
+<option value="Mirecourt">
+<option value="Mirepoix">
+<option value="Misérieux">
+<option value="Mitry-Mory">
+<option value="Moirans">
+<option value="Moirans-en-Montagne">
+<option value="Moissac">
+<option value="Moissy-Cramayel">
+<option value="Molsheim">
+<option value="Monaco">
+<option value="Mondeville">
+<option value="Monistrol-sur-Loire">
+<option value="Mons-en-Baroeul">
+<option value="Mont-Saint-Aignan">
+<option value="Mont-de-Marsan">
+<option value="Montagne">
+<option value="Montaigu-Vendée">
+<option value="Montardon">
+<option value="Montargis">
+<option value="Montataire">
+<option value="Montauban">
+<option value="Montbard">
+<option value="Montbrison">
+<option value="Montbéliard">
+<option value="Montceau-les-Mines">
+<option value="Montdidier">
+<option value="Monteils">
+<option value="Montereau-Fault-Yonne">
+<option value="Montferrier-sur-Lez">
+<option value="Montfort-sur-Meu">
+<option value="Montgeron">
+<option value="Montigny-le-Bretonneux">
+<option value="Montigny-lès-Metz">
+<option value="Montivilliers">
+<option value="Montluel">
+<option value="Montluçon">
+<option value="Montmorency">
+<option value="Montmorillon">
+<option value="Montmorot">
+<option value="Montpellier">
+<option value="Montreuil">
+<option value="Montrouge">
+<option value="Montélimar">
+<option value="Moorea">
+<option value="Morbihan">
+<option value="Morcenx-la-Nouvelle">
+<option value="Morlaix">
+<option value="Morne-à-l'Eau">
+<option value="Morsang-sur-Orge">
+<option value="Mortagne-au-Perche">
+<option value="Mortain-Bocage">
+<option value="Morteau">
+<option value="Moselle">
+<option value="Mouchard">
+<option value="Mougins">
+<option value="Moulins">
+<option value="Mourenx">
+<option value="Moûtiers">
+<option value="Mtsamboro">
+<option value="Mugron">
+<option value="Mulhouse">
+<option value="Muret">
+<option value="Mâcon">
+<option value="Mérignac">
+<option value="Méru">
+<option value="Nancy">
+<option value="Nandax">
+<option value="Nangis">
+<option value="Nanterre">
+<option value="Nantes">
+<option value="Narbonne">
+<option value="Naves">
+<option value="Nemours">
+<option value="Neufchâteau">
+<option value="Neufchâtel-en-Bray">
+<option value="Neuilly-sur-Marne">
+<option value="Neuilly-sur-Seine">
+<option value="Neuvic">
+<option value="Nevers">
+<option value="Nice">
+<option value="Niort">
+<option value="Nièvre">
+<option value="Noeux-les-Mines">
+<option value="Nogaro">
+<option value="Nogent-le-Rotrou">
+<option value="Nogent-sur-Marne">
+<option value="Nogent-sur-Oise">
+<option value="Nogent-sur-Vernisson">
+<option value="Noisiel">
+<option value="Noisy-le-Grand">
+<option value="Noisy-le-Sec">
+<option value="Nord">
+<option value="Normandie">
+<option value="Nouvelle-Aquitaine">
+<option value="Noyon">
+<option value="Nyons">
+<option value="Nérac">
+<option value="Nîmes">
+<option value="Obernai">
+<option value="Occitanie">
+<option value="Oeyreluy">
+<option value="Oise">
+<option value="Olivet">
+<option value="Ollioules">
+<option value="Ondes">
+<option value="Orange">
+<option value="Orchies">
+<option value="Orly">
+<option value="Orléans">
+<option value="Orne">
+<option value="Orsay">
+<option value="Orthez">
+<option value="Orvault">
+<option value="Ottange">
+<option value="Ouangani">
+<option value="Oullins">
+<option value="Oxford">
+<option value="Oyonnax">
+<option value="Ozoir-la-Ferrière">
+<option value="Paimpol">
+<option value="Palaiseau">
+<option value="Pamandzi">
+<option value="Pamiers">
+<option value="Pantin">
+<option value="Papara">
+<option value="Papeete">
+<option value="Paray-le-Monial">
+<option value="Paris">
+<option value="Paris  1er Arrondissement">
+<option value="Paris  3e  Arrondissement">
+<option value="Paris  4e  Arrondissement">
+<option value="Paris  5e  Arrondissement">
+<option value="Paris  6e  Arrondissement">
+<option value="Paris  7e  Arrondissement">
+<option value="Paris  8e  Arrondissement">
+<option value="Paris  9e  Arrondissement">
+<option value="Paris 10e  Arrondissement">
+<option value="Paris 11e  Arrondissement">
+<option value="Paris 12e  Arrondissement">
+<option value="Paris 13e  Arrondissement">
+<option value="Paris 14e  Arrondissement">
+<option value="Paris 15e  Arrondissement">
+<option value="Paris 16e  Arrondissement">
+<option value="Paris 17e  Arrondissement">
+<option value="Paris 18e  Arrondissement">
+<option value="Paris 19e  Arrondissement">
+<option value="Paris 20e  Arrondissement">
+<option value="Parthenay">
+<option value="Pas-de-Calais">
+<option value="Passy">
+<option value="Pau">
+<option value="Pauillac">
+<option value="Pays de la Loire">
+<option value="Pecquencourt">
+<option value="Peltre">
+<option value="Perpignan">
+<option value="Perreux">
+<option value="Pessac">
+<option value="Petit-Bourg">
+<option value="Peyre en Aubrac">
+<option value="Peyrehorade">
+<option value="Pierrefonds">
+<option value="Pierrelatte">
+<option value="Pirae">
+<option value="Pithiviers">
+<option value="Plaisir">
+<option value="Plateau d'Hauteville">
+<option value="Ploemeur">
+<option value="Plombières-lès-Dijon">
+<option value="Plomelin">
+<option value="Ploubazlanec">
+<option value="Ploufragan">
+<option value="Plouisy">
+<option value="Plouzané">
+<option value="Ploërmel">
+<option value="Pointe-Noire">
+<option value="Pointe-à-Pitre">
+<option value="Poissy">
+<option value="Poisy">
+<option value="Poitiers">
+<option value="Poligny">
+<option value="Polynésie française">
+<option value="Pons">
+<option value="Pont-Audemer">
+<option value="Pont-Hébert">
+<option value="Pont-Sainte-Maxence">
+<option value="Pont-de-Chéruy">
+<option value="Pont-du-Château">
+<option value="Pont-l'Abbé">
+<option value="Pont-à-Mousson">
+<option value="Pontarlier">
+<option value="Pontault-Combault">
+<option value="Pontaumur">
+<option value="Pontivy">
+<option value="Pontoise">
+<option value="Porcheville">
+<option value="Port-Louis">
+<option value="Pouzauges">
+<option value="Prades">
+<option value="Privas">
+<option value="Provence Alpes Côte d'Azur">
+<option value="Provins">
+<option value="Pruillé-le-Chétif">
+<option value="Prémontré">
+<option value="Pulversheim">
+<option value="Punaauia">
+<option value="Puteaux">
+<option value="Puy-de-Dôme">
+<option value="Pyrénées-Atlantiques">
+<option value="Pyrénées-Orientales">
+<option value="Périgueux">
+<option value="Péronne">
+<option value="Pézenas">
+<option value="Quessoy">
+<option value="Questembert">
+<option value="Quetigny">
+<option value="Quimper">
+<option value="Quimperlé">
+<option value="Quintin">
+<option value="RABAT-SALE">
+<option value="Rabat">
+<option value="Rambouillet">
+<option value="Redon">
+<option value="Reims">
+<option value="Remire-Montjoly">
+<option value="Remiremont">
+<option value="Rennes">
+<option value="Rethel">
+<option value="Revel">
+<option value="Rezé">
+<option value="Rhône">
+<option value="Rignac">
+<option value="Rillieux-la-Pape">
+<option value="Riom">
+<option value="Rive-de-Gier">
+<option value="Rives de l'Yon">
+<option value="Rivière-Salée">
+<option value="Roanne">
+<option value="Rochefort">
+<option value="Rochefort-Montagne">
+<option value="Rodez">
+<option value="Rodilhan">
+<option value="Roissy-en-Brie">
+<option value="Rollancourt">
+<option value="Romans-sur-Isère">
+<option value="Rombas">
+<option value="Romilly-sur-Seine">
+<option value="Romorantin-Lanthenay">
+<option value="Rosières-près-Troyes">
+<option value="Rosny-sous-Bois">
+<option value="Rostrenen">
+<option value="Roubaix">
+<option value="Rouen">
+<option value="Rouffach">
+<option value="Rouillon">
+<option value="Rouillé">
+<option value="Rousset">
+<option value="Roville-aux-Chênes">
+<option value="Royan">
+<option value="Rueil-Malmaison">
+<option value="Ruelle-sur-Touvre">
+<option value="Ruffec">
+<option value="Rumilly">
+<option value="Sablé-sur-Sarthe">
+<option value="Sada">
+<option value="Saint-Affrique">
+<option value="Saint-Aignan">
+<option value="Saint-Amand-Montrond">
+<option value="Saint-Amand-les-Eaux">
+<option value="Saint-Amans-Soult">
+<option value="Saint-André">
+<option value="Saint-André-lez-Lille">
+<option value="Saint-Avold">
+<option value="Saint-Barthélemy-d'Anjou">
+<option value="Saint-Benoît">
+<option value="Saint-Berthevin">
+<option value="Saint-Brieuc">
+<option value="Saint-Chamas">
+<option value="Saint-Chamond">
+<option value="Saint-Christol-lez-Alès">
+<option value="Saint-Chély-d'Apcher">
+<option value="Saint-Claude">
+<option value="Saint-Cloud">
+<option value="Saint-Clément-de-Rivière">
+<option value="Saint-Cyr-l'Ecole">
+<option value="Saint-Cyran-du-Jambot">
+<option value="Saint-Denis">
+<option value="Saint-Dizier">
+<option value="Saint-Dié-des-Vosges">
+<option value="Saint-Egrève">
+<option value="Saint-Eloy-les-Mines">
+<option value="Saint-Etienne">
+<option value="Saint-Etienne-du-Rouvray">
+<option value="Saint-Flour">
+<option value="Saint-Gaudens">
+<option value="Saint-Genest-Lerpt">
+<option value="Saint-Genis-Laval">
+<option value="Saint-Germain-en-Laye">
+<option value="Saint-Girons">
+<option value="Saint-Herblain">
+<option value="Saint-Hilaire-du-Harcouët">
+<option value="Saint-Ismier">
+<option value="Saint-Jean-d'Angély">
+<option value="Saint-Jean-d'Illac">
+<option value="Saint-Jean-de-Braye">
+<option value="Saint-Jean-de-Maurienne">
+<option value="Saint-Jean-de-Monts">
+<option value="Saint-Jean-de-la-Ruelle">
+<option value="Saint-Jean-du-Gard">
+<option value="Saint-Joseph">
+<option value="Saint-Julien-en-Genevois">
+<option value="Saint-Junien">
+<option value="Saint-Laurent">
+<option value="Saint-Laurent-de-Chamousset">
+<option value="Saint-Laurent-du-Maroni">
+<option value="Saint-Laurent-sur-Sèvre">
+<option value="Saint-Leu">
+<option value="Saint-Louis">
+<option value="Saint-Lô">
+<option value="Saint-Maixent-l'Ecole">
+<option value="Saint-Malo">
+<option value="Saint-Martin">
+<option value="Saint-Martin-Boulogne">
+<option value="Saint-Martin-d'Hères">
+<option value="Saint-Maur-des-Fossés">
+<option value="Saint-Maurice">
+<option value="Saint-Maximin">
+<option value="Saint-Maximin-la-Sainte-Baume">
+<option value="Saint-Michel-de-Maurienne">
+<option value="Saint-Michel-sur-Orge">
+<option value="Saint-Médard-en-Jalles">
+<option value="Saint-Méen-le-Grand">
+<option value="Saint-Nazaire">
+<option value="Saint-Omer">
+<option value="Saint-Orens-de-Gameville">
+<option value="Saint-Ouen-l'Aumône">
+<option value="Saint-Ouen-sur-Seine">
+<option value="Saint-Palais">
+<option value="Saint-Paul">
+<option value="Saint-Paul-Trois-Châteaux">
+<option value="Saint-Paul-lès-Dax">
+<option value="Saint-Pierre">
+<option value="Saint-Pierre-Quiberon">
+<option value="Saint-Pierre-des-Corps">
+<option value="Saint-Pierre-du-Mont">
+<option value="Saint-Pierre-en-Auge">
+<option value="Saint-Pol-de-Léon">
+<option value="Saint-Pol-sur-Ternoise">
+<option value="Saint-Pouange">
+<option value="Saint-Priest">
+<option value="Saint-Priest-en-Jarez">
+<option value="Saint-Pée-sur-Nivelle">
+<option value="Saint-Quay-Portrieux">
+<option value="Saint-Quentin">
+<option value="Saint-Raphaël">
+<option value="Saint-Saturnin">
+<option value="Saint-Sernin-sur-Rance">
+<option value="Saint-Sébastien-de-Morsent">
+<option value="Saint-Sébastien-sur-Loire">
+<option value="Saint-Vallier">
+<option value="Saint-Venant">
+<option value="Saint-Yrieix-la-Perche">
+<option value="Saint-Yrieix-sur-Charente">
+<option value="Sainte-Adresse">
+<option value="Sainte-Gemme-la-Plaine">
+<option value="Sainte-Geneviève-des-Bois">
+<option value="Sainte-Livrade-sur-Lot">
+<option value="Sainte-Marie">
+<option value="Sainte-Maure">
+<option value="Sainte-Savine">
+<option value="Sainte-Suzanne">
+<option value="Saintes">
+<option value="Sallanches">
+<option value="Salon-de-Provence">
+<option value="Samatan">
+<option value="Sarcelles">
+<option value="Sarlat-la-Canéda">
+<option value="Sarrebourg">
+<option value="Sarreguemines">
+<option value="Sarthe">
+<option value="Sartrouville">
+<option value="Sartène">
+<option value="Sassenage">
+<option value="Saumur">
+<option value="Saverne">
+<option value="Savigny-le-Temple">
+<option value="Savigny-sur-Orge">
+<option value="Savoie">
+<option value="Saône-et-Loire">
+<option value="Sceaux">
+<option value="Schiltigheim">
+<option value="Schoelcher">
+<option value="Schoeneck">
+<option value="Sedan">
+<option value="Segré-en-Anjou Bleu">
+<option value="Seine-Maritime">
+<option value="Seine-Saint-Denis">
+<option value="Seine-et-Marne">
+<option value="Semur-en-Auxois">
+<option value="Senlis">
+<option value="Sens">
+<option value="Serris">
+<option value="Seyssinet-Pariset">
+<option value="Sin-le-Noble">
+<option value="Singapour">
+<option value="Six-Fours-les-Plages">
+<option value="Soissons">
+<option value="Somain">
+<option value="Somme">
+<option value="Somme-Suippe">
+<option value="Somme-Vesle">
+<option value="Sotteville-lès-Rouen">
+<option value="Souilhanels">
+<option value="Souillac">
+<option value="Sours">
+<option value="Soyaux">
+<option value="Stains">
+<option value="Stenay">
+<option value="Strasbourg">
+<option value="Sucy-en-Brie">
+<option value="Suresnes">
+<option value="Surgères">
+<option value="Sète">
+<option value="Sèvres">
+<option value="Sées">
+<option value="Sélestat">
+<option value="Sérignan">
+<option value="Taiarapu-o">
+<option value="Talange">
+<option value="Talence">
+<option value="Tarare">
+<option value="Tarbes">
+<option value="Tarn">
+<option value="Tarn-et-Garonne">
+<option value="Taverny">
+<option value="Territoire de Belfort">
+<option value="Thann">
+<option value="Thiais">
+<option value="Thiers">
+<option value="Thillois">
+<option value="Thionville">
+<option value="Thonon-les-Bains">
+<option value="Thouars">
+<option value="Thuré">
+<option value="Thônes">
+<option value="Tilloy-lès-Mofflaines">
+<option value="Tomblaine">
+<option value="Tonnerre">
+<option value="Torcy">
+<option value="Toucy">
+<option value="Toul">
+<option value="Toulon">
+<option value="Toulouse">
+<option value="Tourcoing">
+<option value="Tournan-en-Brie">
+<option value="Tournefeuille">
+<option value="Tournon-sur-Rhône">
+<option value="Tours">
+<option value="Trappes">
+<option value="Treffiagat">
+<option value="Tremblay-en-France">
+<option value="Troyes">
+<option value="Tréguier">
+<option value="Trévoux">
+<option value="Tulle">
+<option value="Ugine">
+<option value="Ussel">
+<option value="Ustaritz">
+<option value="Uturoa">
+<option value="Uzès">
+<option value="Val de Briey">
+<option value="Val-d'oise">
+<option value="Val-de-Marne">
+<option value="Val-de-Reuil">
+<option value="Valbonne">
+<option value="Valdeblore">
+<option value="Valdoie">
+<option value="Valence">
+<option value="Valenciennes">
+<option value="Vallon-Pont-d'Arc">
+<option value="Vals-près-le-Puy">
+<option value="Valserhône">
+<option value="Vandoeuvre-lès-Nancy">
+<option value="Vannes">
+<option value="Vanves">
+<option value="Var">
+<option value="Varennes-sur-Seine">
+<option value="Varzy">
+<option value="Vaucluse">
+<option value="Vaucresson">
+<option value="Vaujours">
+<option value="Vaulx-en-Velin">
+<option value="Vauréal">
+<option value="Vaux-le-Pénil">
+<option value="Vayres">
+<option value="Vendée">
+<option value="Vendôme">
+<option value="Venoy">
+<option value="Verdalle">
+<option value="Verdun">
+<option value="Verneuil d'Avre et d'Iton">
+<option value="Verneuil-sur-Seine">
+<option value="Verneuil-sur-Vienne">
+<option value="Vernon">
+<option value="Verrières-en-Anjou">
+<option value="Versailles">
+<option value="Vesoul">
+<option value="Vic-en-Bigorre">
+<option value="Vichy">
+<option value="Vienne">
+<option value="Vierzon">
+<option value="Ville-d'Avray">
+<option value="Villefontaine">
+<option value="Villefranche-de-Rouergue">
+<option value="Villefranche-sur-Saône">
+<option value="Villejuif">
+<option value="Villemandeur">
+<option value="Villemoirieu">
+<option value="Villemomble">
+<option value="Villenave-d'Ornon">
+<option value="Villeneuve-Saint-Georges">
+<option value="Villeneuve-d'Ascq">
+<option value="Villeneuve-la-Garenne">
+<option value="Villeneuve-le-Roi">
+<option value="Villeneuve-sur-Lot">
+<option value="Villepinte">
+<option value="Villers-lès-Nancy">
+<option value="Villetaneuse">
+<option value="Villeurbanne">
+<option value="Villiers-Saint-Frédéric">
+<option value="Villiers-le-Bel">
+<option value="Vincennes">
+<option value="Vire Normandie">
+<option value="Vitrolles">
+<option value="Vitry-le-François">
+<option value="Vitry-sur-Seine">
+<option value="Vitré">
+<option value="Vizille">
+<option value="Voiron">
+<option value="Vosges">
+<option value="Vouneuil-sous-Biard">
+<option value="Voutezac">
+<option value="Vélizy-Villacoublay">
+<option value="Vénissieux">
+<option value="Wasquehal">
+<option value="Wassy">
+<option value="Wattignies">
+<option value="Wattrelos">
+<option value="Wingles">
+<option value="Wintzenheim">
+<option value="Wissembourg">
+<option value="Wittelsheim">
+<option value="Wormhout">
+<option value="Yerres">
+<option value="Yonne">
+<option value="Yssingeaux">
+<option value="Yutz">
+<option value="Yvelines">
+<option value="Yvetot">
+<option value="Yzeure">
+
+</datalist>
+</div>
+<script>
+	function put_image(){
+	var lieu = document.getElementById("choix_lieu").value   
+    var choix_dep = document.getElementById("choix_dep").value    
+    var choix_ville = document.getElementById("choix_ville").value    
+    var choix_fil = document.getElementById("choix_fil").value 
+
+	if(choix_dep == "Selection" && choix_ville == "Selection" && choix_fil == "Selection"){
+		document.getElementById("photo_eleve").style.display = 'inline';
+	}
+	else{
+		document.getElementById("photo_eleve").style.display = 'none';
+	}
+	}
+	put_image()
+	
+</script>
+<script>
+	function changement_principal(){   
+	document.getElementById("photo_eleve").style.display = 'none'; 
+    var lieu = document.getElementById("choix_lieu").value   
+    var choix_dep = document.getElementById("choix_dep").value    
+    var choix_ville = document.getElementById("choix_ville").value    
+    var choix_fil = document.getElementById("choix_fil").value      
+    
+	//document.getElementById("choix_fil").value = "Informatique"	
+    
+    let formData = new FormData();
+    
+    formData.append('lieu', document.querySelector("#choix_lieu").value);
+    formData.append('choix_dep', document.querySelector("#choix_dep").value);
+    formData.append('choix_ville', document.querySelector("#choix_ville").value);
+    formData.append('choix_fil', document.querySelector("#choix_fil").value);
+	
+
+    const request = new Request('{% url "compute" %}', {method: 'POST', body: formData});
+	
+    fetch(request)
+        .then(response => response.json())
+        .then(result => {    
+			//deuxieme catégo
+			nb_filieres2 = result["operation_result"][11].length
+			tab_filieres2 = result["operation_result"][11]
+			chaine_liste = "<select id='choix_ville' class='liste' onChange='deuxieme_changement()'>";
+			chaine_liste += '<option value="Selection">Sélectionnez une filière</option>';
+			for(var defil=0;defil<nb_filieres2; defil++){
+
+				chaine_liste += "<option value=\"" + tab_filieres2[defil] + "\">" + tab_filieres2[defil] + "</option>";
+			}
+			chaine_liste += "</select>";
+			document.getElementById("second_to_change").innerHTML = chaine_liste;
+			//document.getElementById("choix_ville").value = choix_ville
+			//troisième catégo
+			nb_filieres3 = result["operation_result"][12].length
+			tab_filieres3 = result["operation_result"][12]
+			chaine_liste = "<select id='choix_fil' class='liste' onChange='troisieme_changement()'>";
+			chaine_liste += '<option value="Selection">Sélectionnez une filière</option>';
+			for(var defil=0;defil<nb_filieres3; defil++){
+
+				chaine_liste += "<option value=\"" + tab_filieres3[defil] + "\">" + tab_filieres3[defil] + "</option>";
+			}
+			chaine_liste += "</select>";
+			document.getElementById("third_to_change").innerHTML = chaine_liste;
+			//document.getElementById("choix_fil").value = choix_fil
+
+            document.getElementById("affiche_gen").innerHTML = "Générale : " + result["operation_result"][0][0];
+			document.getElementById("affiche_pro").innerHTML = "Professionnelle : " + result["operation_result"][0][1];
+			document.getElementById("affiche_tech").innerHTML = "Technologique : " + result["operation_result"][0][2];	
+			document.getElementById("choix_ville").value = result["operation_result"][6]
+			document.getElementById("choix_fil").value = result["operation_result"][6]
+			nb_filieres = result["operation_result"][7].length
+			
+			tab_filieres = result["operation_result"][7]
+			chaine_liste = '<datalist id = "lieux_choice">'
+			for(var defil=0;defil<nb_filieres; defil++){
+				chaine_liste += '<option value="'+ tab_filieres[defil] +'"</option>';
+			}
+			chaine_liste += "</datalist>";
+			document.getElementById("div_lieux_choice").innerHTML = chaine_liste;	
+
+
+			
+
+}) 
+    
+}
+</script>
+<script>
+	function deuxieme_changement(){   
+	 document.getElementById("photo_eleve").style.display = 'none';
+	 var lieu = document.getElementById("choix_lieu").value   
+	 var choix_dep = document.getElementById("choix_dep").value    
+	 var choix_ville = document.getElementById("choix_ville").value    
+	 var choix_fil = document.getElementById("choix_fil").value      
+	 
+	 
+	 
+	 let formData = new FormData();
+	 
+	 formData.append('lieu', document.querySelector("#choix_lieu").value);
+	 formData.append('choix_dep', document.querySelector("#choix_dep").value);
+	 formData.append('choix_ville', document.querySelector("#choix_ville").value);
+	 formData.append('choix_fil', document.querySelector("#choix_fil").value);
+ 
+	 const request = new Request('{% url "compute" %}', {method: 'POST', body: formData});
+ 
+	 fetch(request)
+		 .then(response => response.json())
+		 .then(result => {
+			//troisième catégo
+			nb_filieres3 = result["operation_result"][13].length
+			tab_filieres3 = result["operation_result"][13]
+			chaine_liste = "<select id='choix_fil' class='liste' onChange='troisieme_changement()'>";
+			chaine_liste += '<option value="Selection">Sélectionnez une filière</option>';
+			for(var defil=0;defil<nb_filieres3; defil++){
+
+				chaine_liste += "<option value=\"" + tab_filieres3[defil] + "\">" + tab_filieres3[defil] + "</option>";
+			}
+			chaine_liste += "</select>";
+			document.getElementById("third_to_change").innerHTML = chaine_liste;
+			//document.getElementById("choix_fil").value = choix_fil
+			document.getElementById("choix_dep").value = result["operation_result"][3]
+			document.getElementById("choix_fil").value  = result["operation_result"][6]
+			document.getElementById("affiche_gen").innerHTML = "Générale : " + result["operation_result"][1][0];
+			document.getElementById("affiche_pro").innerHTML = "Professionnelle : " + result["operation_result"][1][1];
+			document.getElementById("affiche_tech").innerHTML = "Technologique : " + result["operation_result"][1][2];	
+			nb_filieres = result["operation_result"][8].length
+			tab_filieres = result["operation_result"][8]
+			chaine_liste = '<datalist id = "lieux_choice">'
+			for(var defil=0;defil<nb_filieres; defil++){
+				chaine_liste += '<option value="'+ tab_filieres[defil] +'"</option>';
+			}
+			chaine_liste += "</datalist>";
+			document.getElementById("div_lieux_choice").innerHTML = chaine_liste;	
+
+			
+ 
+ }) 
+	 
+ }
+</script>
+<script>
+	function troisieme_changement(){  
+		
+	 document.getElementById("photo_eleve").style.display = 'none';
+	 var lieu = document.getElementById("choix_lieu").value   
+	 var choix_dep = document.getElementById("choix_dep").value    
+	 var choix_ville = document.getElementById("choix_ville").value    
+	 var choix_fil = document.getElementById("choix_fil").value      
+	 
+	 
+	 
+	 let formData = new FormData();
+	 
+	 formData.append('lieu', document.querySelector("#choix_lieu").value);
+	 formData.append('choix_dep', document.querySelector("#choix_dep").value);
+	 formData.append('choix_ville', document.querySelector("#choix_ville").value);
+	 formData.append('choix_fil', document.querySelector("#choix_fil").value);
+ 
+	 const request = new Request('{% url "compute" %}', {method: 'POST', body: formData});
+ 
+	 fetch(request)
+		 .then(response => response.json())
+		 .then(result => {
+			document.getElementById("choix_dep").value  = result["operation_result"][4]
+			document.getElementById("choix_ville").value = result["operation_result"][5]			 
+			document.getElementById("affiche_gen").innerHTML ="Générale : " + result["operation_result"][2][0];
+			document.getElementById("affiche_pro").innerHTML = "Professionnelle : " + result["operation_result"][2][1];
+			document.getElementById("affiche_tech").innerHTML = "Technologique : " + result["operation_result"][2][2];
+				
+			nb_filieres = result["operation_result"][9].length
+			tab_filieres = result["operation_result"][9]
+			//alert(tab_filieres)
+			chaine_liste = '<datalist id = "lieux_choice">'
+			for(var defil=0;defil<nb_filieres; defil++){
+				chaine_liste += '<option value="'+ tab_filieres[defil] +'"</option>';
+			}
+			
+			chaine_liste += "</datalist>";
+			document.getElementById("div_lieux_choice").innerHTML = chaine_liste;	
+				
+ 
+ }) 
+	 
+ }
+</script>
+
+<script>
+	function changement_place(){   
+     
+    var lieu = document.getElementById("choix_lieu").value   
+    var choix_dep = document.getElementById("choix_dep").value    
+    var choix_ville = document.getElementById("choix_ville").value    
+    var choix_fil = document.getElementById("choix_fil").value      
+    
+	//document.getElementById("choix_fil").value = "Informatique"	
+    
+    let formData = new FormData();
+    
+    formData.append('lieu', document.querySelector("#choix_lieu").value);
+    formData.append('choix_dep', document.querySelector("#choix_dep").value);
+    formData.append('choix_ville', document.querySelector("#choix_ville").value);
+    formData.append('choix_fil', document.querySelector("#choix_fil").value);
+
+
+    const request = new Request('{% url "compute" %}', {method: 'POST', body: formData});
+
+    fetch(request)
+        .then(response => response.json())
+        .then(result => {
+			
+			nb_filieres1 = result["operation_result"][10].length
+			tab_filieres1 = result["operation_result"][10]
+			chaine_liste = '<select id="choix_dep"  class="liste" onChange="changement_principal()">';
+			chaine_liste += '<option value="Selection">Sélectionnez une filière</option>';
+			for(var defil=0;defil<nb_filieres1; defil++){
+
+				chaine_liste += "<option value=\"" + tab_filieres1[defil] + "\">" + tab_filieres1[defil] + "</option>";
+			}
+			chaine_liste += "</select>";
+			document.getElementById("first_to_change").innerHTML = chaine_liste;
+			document.getElementById("choix_dep").value = choix_dep
+			//deuxieme catégo
+			nb_filieres2 = result["operation_result"][11].length
+			tab_filieres2 = result["operation_result"][11]
+			chaine_liste = "<select id='choix_ville' class='liste' onChange='deuxieme_changement()'>";
+			chaine_liste += '<option value="Selection">Sélectionnez une filière</option>';
+			for(var defil=0;defil<nb_filieres2; defil++){
+
+				chaine_liste += "<option value=\"" + tab_filieres2[defil] + "\">" + tab_filieres2[defil] + "</option>";
+			}
+			chaine_liste += "</select>";
+			document.getElementById("second_to_change").innerHTML = chaine_liste;
+			document.getElementById("choix_ville").value = choix_ville
+			//troisième catégo
+			if (result["operation_result"][12].length != 0){
+				nb_filieres3 = result["operation_result"][12].length
+				tab_filieres3 = result["operation_result"][12]
+			}else{
+				nb_filieres3 = result["operation_result"][13].length
+				tab_filieres3 = result["operation_result"][13]
+			}
+			nb_filieres3 = result["operation_result"][12].length
+			tab_filieres3 = result["operation_result"][12]
+			chaine_liste = "<select id='choix_fil' class='liste' onChange='troisieme_changement()'>";
+			chaine_liste += '<option value="Selection">Sélectionnez une filière</option>';
+			for(var defil=0;defil<nb_filieres3; defil++){
+
+				chaine_liste += "<option value=\"" + tab_filieres3[defil] + "\">" + tab_filieres3[defil] + "</option>";
+			}
+			chaine_liste += "</select>";
+			document.getElementById("third_to_change").innerHTML = chaine_liste;
+			document.getElementById("choix_fil").value = choix_fil
+            //document.getElementById("choix_ville").value = result["operation_result"][3]
+			//document.getElementById("choix_fil").value = result["operation_result"][3]
+			if (choix_fil!="Selection" && result["operation_result"][2][0] !="nan %"){
+				document.getElementById("affiche_gen").innerHTML = "Générale : " + result["operation_result"][2][0];
+				document.getElementById("affiche_pro").innerHTML = "Professionnelle : " + result["operation_result"][2][1];
+				document.getElementById("affiche_tech").innerHTML = "Technologique : " + result["operation_result"][2][2];
+			}else{
+				if (choix_ville!="Selection" && result["operation_result"][1][0] !="nan %"){
+					document.getElementById("affiche_gen").innerHTML = "Générale : " + result["operation_result"][1][0];
+					document.getElementById("affiche_pro").innerHTML = "Professionnelle : " + result["operation_result"][1][1];
+					document.getElementById("affiche_tech").innerHTML = "Technologique : " + result["operation_result"][1][2];
+				}else{
+					if (choix_dep!="Selection" && result["operation_result"][0][0] !="nan %"){
+						document.getElementById("affiche_gen").innerHTML = "Générale : " + result["operation_result"][0][0];
+						document.getElementById("affiche_pro").innerHTML = "Professionnelle : " + result["operation_result"][0][1];
+						document.getElementById("affiche_tech").innerHTML = "Technologique : " + result["operation_result"][0][2];
+					}
+						
+					
+					
+				}
+				
+			}
+			//si le lieu est vide
+			if (lieu==""){
+				nb_filieres1 = result["operation_result"][14].length
+				tab_filieres1 = result["operation_result"][14]
+				chaine_liste = '<select id="choix_dep"  class="liste" onChange="changement_principal()">';
+				chaine_liste += '<option value="Selection">Sélectionnez une filière</option>';
+				for(var defil=0;defil<nb_filieres1; defil++){
+
+					chaine_liste += "<option value=\"" + tab_filieres1[defil] + "\">" + tab_filieres1[defil] + "</option>";
+				}
+				chaine_liste += "</select>";
+				document.getElementById("first_to_change").innerHTML = chaine_liste;
+				document.getElementById("choix_dep").value = choix_dep
+			}
+			
+			
+            	
+			
+
+}) 
+    
+}
+</script>
+
+</body>
+</html>
